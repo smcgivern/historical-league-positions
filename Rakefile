@@ -117,6 +117,10 @@ def create_from_mapping(key)
   mapping = "#{key}_mapping".to_sym
   mapped = {}
 
+  unless File.exist?(FILES[mapping])
+    raise "#{FILES[mapping]} missing; it needs to be created by hand"
+  end
+
   puts ['Creating mapping in ', FILES[key], ' from ',
         FILES[mapping]].join
 
