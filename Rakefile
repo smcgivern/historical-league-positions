@@ -8,7 +8,7 @@ FILES = {
   :tiers => 'tiers.json',
   :tiers_mapping => 'tiers.txt',
   :tier_sizes => 'tier-sizes.json',
-  :seasons_mapped => 'rsssf-seasons-mapped.json',
+  :seasons_mapped => 'seasons-mapped.json',
 }
 
 # Only include the JSON files for clean, as text files are manually
