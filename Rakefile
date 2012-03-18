@@ -156,7 +156,7 @@ def create_from_mapping(key)
   puts ['Writing ', mapped.values.flatten.size, ' names to ',
         mapped.keys.size, ' IDs'].join
 
-  write_json(FILES[key], team_list)
+  write_json(FILES[key], mapped)
 end
 
 def load_json(f); c = open(f).read; JSON.parse(c); end
