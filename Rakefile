@@ -54,13 +54,12 @@ end
 desc 'Map the team IDs from teams.json to the seasons file.'
 file FILES[:seasons_mapped] => [FILES[:teams], FILES[:seasons]] do
   teams = {}
-  seasons = load_json(FILES[:seasons])
 
   load_json(FILES[:teams]).each do |id, names|
     names.each {|n| teams[n] = id}
   end
 
-  seasons.each do |season, divisions|
+  load_json(FILES[:seasons]).each do |season, divisions|
     divisions.each_with_index do |division, i|
       division['table'].each_with_index do |row, j|
         seasons[season][i]['table'][j][2] = teams[row[2]]
