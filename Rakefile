@@ -123,8 +123,8 @@ file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
     end
   end
 
-  puts ['Replacing names in ', FILES[:seasons], ' with IDs from ',
-        FILES[:teams], ' in ', FILES[:seasons_mapped]].join
+  puts ['Reordered data from ', FILES[:seasons_mapped], ' in ',
+        FILES[:seasons_reordered]].join
 
   write_json(FILES[:seasons_reordered], seasons)
 end
