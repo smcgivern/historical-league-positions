@@ -51,7 +51,7 @@ file FILES[:teams] do
   create_from_mapping(:teams)
 end
 
-desc 'Map the team IDs from create_team_mapping to the seasons file.'
+desc 'Map the team IDs from teams.json to the seasons file.'
 file FILES[:seasons_mapped] => [FILES[:teams], FILES[:seasons]] do
   teams = {}
   seasons = load_json(FILES[:seasons])
