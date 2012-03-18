@@ -5,6 +5,8 @@ FILES = {
   :seasons => 'rsssf-seasons.json',
   :teams => 'teams.json',
   :teams_mapping => 'teams.txt',
+  :tiers => 'tiers.json',
+  :tiers_mapping => 'tiers.txt',
   :seasons_mapped => 'rsssf-seasons-mapped.json',
 }
 
@@ -25,28 +27,28 @@ task :list_divisions do
     }}.flatten.uniq.sort
 end
 
+desc 'List the tiers with their names.'
+task :list_tiers do
+  puts load_json(FILES[:seasons]).
+    map {|s, e| e.map {|d| d['info'].map {|i| "#{d['tier']}=#{i}"}}}.
+    flatten.uniq.sort
+end
+
+# Like teams.txt, tiers.txt is hand-generated. Use list_tiers to help;
+# a lot of the lines can be deleted and so ignored.
+#
+desc 'Create JSON tiers file from the tiers mapping list.'
+file FILES[:tiers] do
+  create_from_mapping(:tiers)
+end
+
 # The teams.txt file needs to be created by hand; use the list_teams
 # task to help. The format is just <ID>=<name>, where <name> is from
 # the seasons file.
 #
 desc 'Create JSON teams file from the teams mapping list.'
 file FILES[:teams] do
-  puts ['Creating mapping in ', FILES[:teams], ' from ',
-        FILES[:teams_mapping]].join
-
-  team_list = {}
-
-  open(FILES[:teams_mapping]).each_line do |line|
-    id, name = *line.strip.split('=')
-
-    team_list[id] ||= []
-    team_list[id] << name
-  end
-
-  puts ['Writing ', team_list.values.flatten.size, ' names to ',
-        team_list.keys.size, ' IDs'].join
-
-  write_json(FILES[:teams], team_list)
+  create_from_mapping(:teams)
 end
 
 desc 'Map the team IDs from create_team_mapping to the seasons file.'
@@ -110,6 +112,26 @@ file FILES[:seasons], [:start, :finish, :base] do |t, args|
   end
 
   open(FILES[:seasons], 'w').puts(JSON.pretty_generate(seasons))
+end
+
+def create_from_mapping(key)
+  mapping = "#{key}_mapping".to_sym
+  mapped = {}
+
+  puts ['Creating mapping in ', FILES[key], ' from ',
+        FILES[mapping]].join
+
+  open(FILES[mapping]).each_line do |line|
+    id, name = *line.strip.split('=')
+
+    mapped[id] ||= []
+    mapped[id] << name
+  end
+
+  puts ['Writing ', mapped.values.flatten.size, ' names to ',
+        mapped.keys.size, ' IDs'].join
+
+  write_json(FILES[key], team_list)
 end
 
 def load_json(f); c = open(f).read; JSON.parse(c); end
