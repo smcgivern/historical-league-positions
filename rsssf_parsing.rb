@@ -46,7 +46,7 @@ end
 #   10. Aston Villa [...]
 #   22. WEST BROMWICH ALBION [...]
 #
-def parse_rsssf_tables(text, place, tier=1)
+def parse_rsssf_tables(text, tier=1)
   # Regex segment for a league position. Dot is optional as it's
   # missing in the 1994-95 file on the Premier League table, among
   # others.
@@ -75,6 +75,12 @@ def parse_rsssf_tables(text, place, tier=1)
           info << line.strip if line.strip.size > 0
         end
       else
+        # Division 3 (North) and Division 3 (South) were at the same
+        # level, but the north one is always listed first and so would
+        # end up in a higher tier.
+        #
+        tier -= 1 if info.any? {|x| x.include?('(South)')}
+
         # Ignore 'non-tables' with information about play-offs, etc.
         #
         unless header.size == 3
