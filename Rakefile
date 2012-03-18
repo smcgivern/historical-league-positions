@@ -10,6 +10,10 @@ FILES = {
   :seasons_mapped => 'rsssf-seasons-mapped.json',
 }
 
+# Only include the JSON files for clean, as text files are manually
+# created.
+#
+CLEAN.push(*FileList[FILES.values.select {|x| x.include?('json')}])
 CLOBBER.push(*FileList[FILES.values])
 
 desc 'List the unique team names from the seasons file.'
