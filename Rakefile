@@ -13,14 +13,14 @@ CLOBBER.push(*FileList[FILES.values])
 desc 'List the unique team names from the seasons file.'
 task :list_teams do
   puts load_json(FILES[:seasons]).
-    map {|s, ds| ds.map {|d| d['table'].map {|t| t[2]}}}.
+    map {|s, e| e.map {|d| d['table'].map {|t| t[2]}}}.
     flatten.uniq.sort
 end
 
 desc 'List the divisions from the seasons file with the header size.'
 task :list_divisions do
   puts load_json(FILES[:seasons]).
-    map {|s, ds| ds.map {|d|
+    map {|s, e| e.map {|d|
       "#{d['info'].join(', ')} (#{d['header'].size})"
     }}.flatten.uniq.sort
 end
