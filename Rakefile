@@ -7,6 +7,7 @@ FILES = {
   :teams_mapping => 'teams.txt',
   :tiers => 'tiers.json',
   :tiers_mapping => 'tiers.txt',
+  :tier_sizes => 'tier-sizes.json',
   :seasons_mapped => 'rsssf-seasons-mapped.json',
 }
 
@@ -44,6 +45,23 @@ end
 desc 'Create JSON tiers file from the tiers mapping list.'
 file FILES[:tiers] do
   create_from_mapping(:tiers)
+end
+
+desc 'Create tier sizes file from the seasons file.'
+file FILES[:tier_sizes] => [FILES[:seasons]] do
+  tier_sizes = {}
+
+  load_json(FILES[:seasons]).each do |season, divisions|
+    divisions.each do |division|
+      tier_sizes[division['tier']] ||= {}
+      tier_sizes[division['tier']][season] ||= []
+      tier_sizes[division['tier']][season] << division['table'].size
+    end
+  end
+
+  puts ['Wrote tier sizes to ', FILES[:tier_sizes]].join
+
+  write_json(FILES[:tier_sizes], tier_sizes)
 end
 
 # The teams.txt file needs to be created by hand; use the list_teams
