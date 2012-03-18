@@ -1,3 +1,4 @@
+require 'rake/clean'
 require 'json'
 
 FILES = {
@@ -6,6 +7,8 @@ FILES = {
   :teams_mapping => 'teams.txt',
   :seasons_mapped => 'rsssf-seasons-mapped.json',
 }
+
+CLOBBER.push(*FileList[FILES.values])
 
 desc 'List the unique team names from the seasons file.'
 task :list_teams do
