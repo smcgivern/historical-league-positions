@@ -9,6 +9,7 @@ FILES = {
   :tiers_mapping => 'tiers.txt',
   :tier_sizes => 'tier-sizes.json',
   :seasons_mapped => 'seasons-mapped.json',
+  :seasons_reordered => 'seasons-reordered.json',
 }
 
 # Only include the JSON files for clean, as text files are manually
@@ -94,6 +95,38 @@ file FILES[:seasons_mapped] => [FILES[:teams], FILES[:seasons]] do
         FILES[:teams], ' in ', FILES[:seasons_mapped]].join
 
   write_json(FILES[:seasons_mapped], seasons)
+end
+
+desc 'Reorder the seasons file for use in JS'
+file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
+                                   FILES[:tier_sizes]] do
+
+  seasons = {}
+  tier_sizes = load_json(FILES[:tier_sizes])
+
+  load_json(FILES[:seasons_mapped]).each do |season, divisions|
+    divisions.each do |division|
+      division['table'].each do |row|
+        team = row[2]
+
+        offset = (1...(division['tier'])).inject(0) do |sum, tier|
+          sum + tier_sizes[tier.to_s][season].first
+        end
+
+        seasons[season] ||= {}
+        seasons[season][team] = {
+          'tier' => division['tier'],
+          'position' => row[1],
+          'effective-position' => row[1] + offset.to_i,
+        }
+      end
+    end
+  end
+
+  puts ['Replacing names in ', FILES[:seasons], ' with IDs from ',
+        FILES[:teams], ' in ', FILES[:seasons_mapped]].join
+
+  write_json(FILES[:seasons_reordered], seasons)
 end
 
 # Parses league tables from the RSSSF. Positional command-line
