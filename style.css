@@ -1,0 +1,24 @@
+#team-selector {
+    display: none;
+}
+
+#team-list ol {
+    list-style-type: none;
+    margin-left: 0em;
+    padding-left: 0em;
+    width: auto;
+}
+
+#chart {
+    float: left;
+}
+
+.scrollable {
+    overflow: auto;
+    width: 20em;
+    height: 10em;
+}
+
+#teams-unselected .key {
+    color: transparent;
+}
