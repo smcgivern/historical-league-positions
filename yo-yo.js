@@ -15,6 +15,8 @@ d3.json('seasons-reordered.json', function(s) {
     });
 });
 
+// Create an element by name with optional text content and attributes.
+//
 function element(name, content, attributes) {
     var e = $(document.createElement(name));
 
@@ -55,6 +57,7 @@ function createTeamSelector(teams) {
         var input = element('input', '',
                             {'id': teamID(id), 'type': 'checkbox'});
 
+        // A filled box for the chart key / legend.
         var key = element('span', '&#9632;', {'class': 'key'});
 
         input.change(function() { moveTeam($(this).parent()); redrawChart(); });
@@ -65,11 +68,16 @@ function createTeamSelector(teams) {
     $('#team-selector').show();
 }
 
+// Moves a team from the selected to unselected list, or vice versa. Inserts in
+// alphabetical order by team ID.
+//
 function moveTeam(team) {
     var id = teamID(team);
-    var destinationType = ($('input', team).attr('checked') ? '' : 'un');
-    var destination = '#teams-' + destinationType + 'selected';
     var inserted = false;
+
+    var destination = '#teams-' +
+        ($('input', team).attr('checked') ? '' : 'un') +
+        'selected';
 
     $(destination + ' > li').each(function(i, item) {
         if (id < teamID(item) && !inserted) {
@@ -78,17 +86,22 @@ function moveTeam(team) {
             inserted = true;
         }});
 
-    if (!inserted) {
-        $(destination).append(team);
-    }
+    if (!inserted) { $(destination).append(team); }
 }
 
+// If given a string, returns the team ID ('team-liverpool', for instance).
+//
+// If given a jQuery object, finds the ID attribute of the first input element
+// it contains, and removes the 'team-' prefix from that.
+//
 function teamID(team) {
     if (team.substring) { return 'team-' + team; }
 
     return (team.id || $('input', team)[0].id).slice(5);
 }
 
+// Clear the chart and draw it with only the teams who are checked.
+//
 function redrawChart() {
     var teams = $.map($('#team-list input:checked'), teamID);
 
@@ -97,6 +110,9 @@ function redrawChart() {
     drawChart(allSeasons, 'effective-position', teams.sort());
 }
 
+// Clear the currently selected teams and instead check all of the teams in the
+// list passed.
+//
 function selectTeams(teams) {
     $('#team-list input:checked').prop('checked', false);
 
@@ -141,7 +157,6 @@ function drawChart(seasons, key, chartTeams) {
     y = d3.scale.linear().domain([0, 100]).range([0, h]);
 
     var vis = d3.select('#chart')
-        .data(chartData)
         .append('svg')
         .attr('width', w + p * 2)
         .attr('height', h + p * 2)
@@ -165,6 +180,7 @@ function drawChart(seasons, key, chartTeams) {
         .attr('stroke-width', 2)
         .attr('stroke', function(d, i) { return color(chartKeys.z[i]); });
 
+    // Colour in the legend items with the line colours.
     $.each(chartTeams, function(i, team) {
         $('.key', $('#' + teamID(team)).parent()).css('color', color(team));
     });
