@@ -123,10 +123,14 @@ file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
     end
   end
 
+  reordered = seasons.map do |season, teams|
+    {'season' => season, 'teams' => teams}
+  end.sort_by {|s| s['season']}
+
   puts ['Reordered data from ', FILES[:seasons_mapped], ' in ',
         FILES[:seasons_reordered]].join
 
-  write_json(FILES[:seasons_reordered], seasons)
+  write_json(FILES[:seasons_reordered], reordered)
 end
 
 # Downloads and parses league tables from the RSSSF. Positional
