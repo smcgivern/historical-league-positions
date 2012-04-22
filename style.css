@@ -20,5 +20,5 @@
 }
 
 #teams-unselected .key {
-    color: transparent;
+    color: transparent !important;
 }
