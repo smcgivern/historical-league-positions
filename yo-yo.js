@@ -76,8 +76,8 @@ function moveTeam(team) {
     var inserted = false;
 
     var destination = '#teams-' +
-        ($('input', team).attr('checked') ? '' : 'un') +
-        'selected';
+            ($('input', team).attr('checked') ? '' : 'un') +
+            'selected';
 
     $(destination + ' > li').each(function(i, item) {
         if (id < teamID(item) && !inserted) {
@@ -122,9 +122,9 @@ function selectTeams(teams) {
 }
 
 function drawChart(seasons, key, chartTeams) {
-    var charting = {};
-    var chartKeys = {'x': [], 'y': [], 'z': []};
-    var chartData = [];
+    var charting = {},
+        chartKeys = {'x': [], 'y': [], 'z': []},
+        chartData = [];
 
     for (var i = 0; i < seasons.length; i++) {
         var teams = seasons[i]['teams'];
@@ -151,24 +151,24 @@ function drawChart(seasons, key, chartTeams) {
     }
 
     var w = 800,
-    h = 300,
-    p = 20,
-    x = d3.scale.linear().domain([1880, 2010]).range([0, w]),
-    y = d3.scale.linear().domain([0, 100]).range([0, h]);
+        h = 300,
+        p = 20,
+        x = d3.scale.linear().domain([1880, 2010]).range([0, w]),
+        y = d3.scale.linear().domain([0, 100]).range([0, h]);
 
     var vis = d3.select('#chart')
-        .append('svg')
-        .attr('width', w + p * 2)
-        .attr('height', h + p * 2)
-        .append('g')
-        .attr('transform', 'translate(' + p + ',' + p + ')');
+            .append('svg')
+            .attr('width', w + p * 2)
+            .attr('height', h + p * 2)
+            .append('g')
+            .attr('transform', 'translate(' + p + ',' + p + ')');
 
     var line = d3.svg.line()
-        .x(function(d) { return x(parseInt(d['season'])) })
-        .y(function(d) { return y(d[key]); });
+            .x(function(d) { return x(parseInt(d['season'])); })
+            .y(function(d) { return y(d[key]); });
 
     var lines = vis.selectAll('.line')
-        .data(chartData)
+            .data(chartData);
 
     var color = d3.scale.category10();
 
