@@ -214,7 +214,7 @@ file FILES[:seasons], [:start, :finish, :base] do |t, args|
     end
   end
 
-  open(FILES[:seasons], 'w').puts(JSON.pretty_generate(seasons))
+  write_json(FILES[:seasons], seasons)
 end
 
 def create_from_mapping(key)
