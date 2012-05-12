@@ -21,7 +21,7 @@ function element(name, content, attributes) {
     var e = $(document.createElement(name));
 
     if (content) { e.append(content); }
-    for (a in attributes) { e.attr(a, attributes[a]); }
+    for (var a in attributes) { e.attr(a, attributes[a]); }
 
     return e;
 }
