@@ -109,16 +109,26 @@ function selectTeams(teams) {
     }
 }
 
-function drawChart(seasons, key, chartTeams) {
-    var w = 600,
-        h = 300,
-        p = 20,
-        x = d3.scale.linear().domain([1880, 2010]).range([0, w]),
-        y = d3.scale.linear().domain([0, 100]).range([0, h]);
+// Returns the min and max values of the array, used in the domain of
+// a scale.
+//
+function minMax(a) { return [d3.min(a), d3.max(a)]; }
 
+function drawChart(seasons, key, chartTeams) {
     var chartSeasons = seasons.filter(function(teamSeasons) {
         return (chartTeams.indexOf(teamSeasons['team']) > -1);
     });
+
+    var years = $.map(chartSeasons[0]['seasons'], function(s) {
+        return parseInt(s['season']) + 1;
+    });
+
+    var w = 700,
+        h = 300,
+        p = 20,
+        x = d3.scale.linear().domain(minMax(years)).range([p * 2, w - p]),
+        y = d3.scale.linear().domain([1, 110]).range([0, h - p]),
+        tiers = [];
 
     var vis = d3.select('#chart')
             .append('svg')
