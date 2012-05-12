@@ -146,7 +146,7 @@ file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
   write_json(FILES[:seasons_reordered], reordered)
 end
 
-# Downloads and parses league tables from the RSSSF. Positional
+# Download and parse league tables from the RSSSF. Positional
 # command-line arguments are:
 # 1) starting year;
 # 2) finishing year (beginning of final season);
