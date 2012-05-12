@@ -1,7 +1,7 @@
 var defaultTeams = ['accrington-stanley', 'everton', 'huddersfield', 'swansea',
                     'wigan-athletic'];
 
-var allSeasons, allTeams;
+var allSeasons, allTeams, allTiers, allTierSizes;
 
 // Create an element by name with optional text content and attributes.
 //
@@ -150,13 +150,12 @@ function drawChart(seasons, key, chartTeams) {
     });
 }
 
-d3.json('ext/seasons.json', function(s) {
-    allSeasons = s;
+d3.json('ext/football-league-positions.json', function(data) {
+    allSeasons = data['seasons'];
+    allTeams = data['teams'];
+    allTiers = data['tiers'];
+    allTierSizes = data['tierSizes'];
 
-    d3.json('ext/teams.json', function(t) {
-        allTeams = t;
-
-        createTeamSelector(allTeams);
-        selectTeams(defaultTeams);
-    });
+    createTeamSelector(allTeams);
+    selectTeams(defaultTeams);
 });

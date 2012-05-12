@@ -10,13 +10,18 @@ FILES = {
   :tiers_mapping => 'tiers.txt',
   :tier_sizes => 'tier-sizes.json',
   :seasons_mapped => 'seasons-mapped.json',
-  :seasons_reordered => 'seasons.json',
+  :seasons_reordered => 'seasons-reordered.json',
+  :final => 'football-league-positions.json',
 }
 
 # Files that are 'final' and used in the ext/ directory.
 #
-TO_EXT = [:teams, :tiers, :tier_sizes, :seasons_reordered].
-  map {|x| FILES[x]}
+TO_EXT = {
+  'teams' => FILES[:teams],
+  'tiers' => FILES[:tiers],
+  'tierSizes' => FILES[:tier_sizes],
+  'seasons' => FILES[:seasons_reordered],
+}
 
 # Only include the JSON files for clean, as text files are manually
 # created.
@@ -24,11 +29,18 @@ TO_EXT = [:teams, :tiers, :tier_sizes, :seasons_reordered].
 CLEAN.push(*FileList[FILES.values.select {|x| x.include?('json')}])
 CLOBBER.push(*FileList[FILES.values])
 
-desc 'Move the files needed for display to the ext/ directory.'
-task :move_to_ext => TO_EXT do
-  TO_EXT.each {|f| FileUtils.copy(f, "../ext/#{f}")}
+desc 'Concatenate TO_EXT files into one and copy to ext/.'
+file FILES[:final] => TO_EXT.values do
+  (["Making #{FILES[:final]} from:"] + TO_EXT.values).
+    each {|x| puts "  #{x}"}
 
-  (['Moved these files to ../ext/:'] + TO_EXT).each {|x| puts x}
+  final = {}
+
+  TO_EXT.each {|k, f| final[k] = load_json(f)}
+
+  write_json(FILES[:final], final, :generate)
+
+  FileUtils.copy(FILES[:final], '../ext/')
 end
 
 desc 'List the unique team names from the seasons file.'
