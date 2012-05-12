@@ -122,39 +122,15 @@ function selectTeams(teams) {
 }
 
 function drawChart(seasons, key, chartTeams) {
-    var charting = {},
-        chartKeys = {'x': [], 'y': [], 'z': []},
-        chartData = [];
-
-    for (var i = 0; i < seasons.length; i++) {
-        var teams = seasons[i]['teams'];
-        chartKeys['x'].push(seasons[i]['season']);
-
-        for (var j = 0; j < chartTeams.length; j++) {
-            var team = chartTeams[j];
-
-            if (!charting.hasOwnProperty(team)) { charting[team] = []; }
-
-            if (teams.hasOwnProperty(team)) {
-                var item = teams[team];
-
-                item['season'] = seasons[i]['season'];
-
-                charting[team].push(item);
-            }
-        }
-    }
-
-    for (var team in charting) {
-        chartKeys['z'].push(team);
-        chartData.push(charting[team]);
-    }
-
     var w = 800,
         h = 300,
         p = 20,
         x = d3.scale.linear().domain([1880, 2010]).range([0, w]),
         y = d3.scale.linear().domain([0, 100]).range([0, h]);
+
+    var chartData = seasons.filter(function(teamSeasons) {
+        return (chartTeams.indexOf(teamSeasons['team']) > -1);
+    });
 
     var vis = d3.select('#chart')
             .append('svg')
@@ -165,20 +141,20 @@ function drawChart(seasons, key, chartTeams) {
 
     var line = d3.svg.line()
             .x(function(d) { return x(parseInt(d['season'])); })
-            .y(function(d) { return y(d[key]); });
-
-    var lines = vis.selectAll('.line')
-            .data(chartData);
+            .y(function(d) { return y(d[key]); })
+            .defined(function(d) { return d[key] > 0; });
 
     var color = d3.scale.category10();
 
-    lines.enter()
-        .append('path')
-        .attr('d', function(d) { var l = line(d); return l; })
-        .attr('class', 'line')
-        .attr('fill', 'none')
-        .attr('stroke-width', 2)
-        .attr('stroke', function(d, i) { return color(chartKeys.z[i]); });
+    var lines = vis.selectAll('.line')
+            .data(chartData)
+            .enter()
+            .append('path')
+            .attr('d', function(d) { return line(d.seasons); })
+            .attr('class', 'line')
+            .attr('fill', 'none')
+            .attr('stroke-width', 2)
+            .attr('stroke', function(d) { return color(d['team']); });
 
     // Colour in the legend items with the line colours.
     $.each(chartTeams, function(i, team) {

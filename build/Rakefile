@@ -110,35 +110,66 @@ file FILES[:seasons_mapped] => [FILES[:teams], FILES[:seasons]] do
   write_json(FILES[:seasons_mapped], seasons)
 end
 
+# Put the seasons file in a structure like this:
+#   [
+#     {
+#       "team": "aberdare",
+#       "seasons": [
+#         {
+#           "season": "1926-27",
+#           "position": 22,
+#           "tier": 3,
+#           "effective-position": 66
+#         },
+#         ... etc ...
+#       ]
+#     },
+#     ... etc ...
+#   ]
+#
+# There are blank entries for all teams that weren't there this
+# season, so that D3 handles gaps correctly. (Accrington Stanley!)
+#
 desc 'Reorder the seasons file for use in JS'
 file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
-                                   FILES[:tier_sizes]] do
+                                   FILES[:tier_sizes],
+                                   FILES[:teams]] do
 
-  seasons = {}
+  teams = {}
+  team_names = load_json(FILES[:teams]).keys
   tier_sizes = load_json(FILES[:tier_sizes])
 
   load_json(FILES[:seasons_mapped]).each do |season, divisions|
+    season_teams = []
+
     divisions.each do |division|
       division['table'].each do |row|
         team = row[2]
+        season_teams << team
 
         offset = (1...(division['tier'])).inject(0) do |sum, tier|
           sum + tier_sizes[tier.to_s][season].first
         end
 
-        seasons[season] ||= {}
-        seasons[season][team] = {
+        teams[team] ||= []
+        teams[team] << {
+          'season' => season,
           'tier' => division['tier'],
           'position' => row[1],
           'effective-position' => row[1] + offset.to_i,
         }
       end
     end
+
+    (team_names - season_teams).each do |team|
+      teams[team] ||= []
+      teams[team] << {'season' => season}
+    end
   end
 
-  reordered = seasons.map do |season, teams|
-    {'season' => season, 'teams' => teams}
-  end.sort_by {|s| s['season']}
+  reordered = teams.map do |team, seasons|
+    {'team' => team, 'seasons' => seasons.sort_by {|s| s['season']}}
+  end.sort_by {|t| t['team']}
 
   puts ['Reordered data from ', FILES[:seasons_mapped], ' in ',
         FILES[:seasons_reordered]].join
