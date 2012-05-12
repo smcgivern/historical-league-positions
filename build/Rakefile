@@ -243,9 +243,9 @@ end
 
 def load_json(f); c = open(f).read; JSON.parse(c); end
 
-def write_json(filename, obj)
+def write_json(filename, obj, meth=:pretty_generate)
   file = open(filename, 'w')
-  file.puts(JSON.pretty_generate(obj))
+  file.puts(JSON.send(meth, obj))
   file.close
 end
 
