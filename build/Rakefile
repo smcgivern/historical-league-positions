@@ -1,4 +1,5 @@
 require 'rake/clean'
+require 'fileutils'
 require 'json'
 
 FILES = {
@@ -12,11 +13,23 @@ FILES = {
   :seasons_reordered => 'seasons-reordered.json',
 }
 
+# Files that are 'final' and used in the ext/ directory.
+#
+TO_EXT = [:teams, :tiers, :tier_sizes, :seasons_reordered].
+  map {|x| FILES[x]}
+
 # Only include the JSON files for clean, as text files are manually
 # created.
 #
 CLEAN.push(*FileList[FILES.values.select {|x| x.include?('json')}])
 CLOBBER.push(*FileList[FILES.values])
+
+desc 'Move the files needed for display to the ext/ directory.'
+task :move_to_ext => TO_EXT do
+  TO_EXT.each {|f| FileUtils.copy(f, "../ext/#{f}")}
+
+  (['Moved these files to ../ext/:'] + TO_EXT).each {|x| puts x}
+end
 
 desc 'List the unique team names from the seasons file.'
 task :list_teams do
