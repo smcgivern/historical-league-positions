@@ -122,7 +122,7 @@ function selectTeams(teams) {
 }
 
 function drawChart(seasons, key, chartTeams) {
-    var w = 800,
+    var w = 600,
         h = 300,
         p = 20,
         x = d3.scale.linear().domain([1880, 2010]).range([0, w]),
