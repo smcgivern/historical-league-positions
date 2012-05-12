@@ -44,7 +44,7 @@ function createTeamSelector(teams) {
     });
 
     // Get a list of team IDs and put in alphabetical order.
-    for (var team in teams) { teamIDs.push(team); }
+    for (var t in teams) { teamIDs.push(t); }
     teamIDs.sort();
 
     for (var i = 0; i < teamIDs.length; i++) {
