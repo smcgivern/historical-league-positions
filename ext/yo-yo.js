@@ -1,19 +1,7 @@
 var defaultTeams = ['accrington-stanley', 'everton', 'huddersfield', 'swansea',
                     'wigan-athletic'];
 
-var allSeasons = null;
-var allTeams = null;
-
-d3.json('ext/seasons.json', function(s) {
-    allSeasons = s;
-
-    d3.json('ext/teams.json', function(t) {
-        allTeams = t;
-
-        createTeamSelector(allTeams);
-        selectTeams(defaultTeams);
-    });
-});
+var allSeasons, allTeams;
 
 // Create an element by name with optional text content and attributes.
 //
@@ -161,3 +149,14 @@ function drawChart(seasons, key, chartTeams) {
         $('.key', $('#' + teamID(team)).parent()).css('color', color(team));
     });
 }
+
+d3.json('ext/seasons.json', function(s) {
+    allSeasons = s;
+
+    d3.json('ext/teams.json', function(t) {
+        allTeams = t;
+
+        createTeamSelector(allTeams);
+        selectTeams(defaultTeams);
+    });
+});
