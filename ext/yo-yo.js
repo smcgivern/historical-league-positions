@@ -128,23 +128,29 @@ function drawChart(seasons, key, chartTeams) {
         p = 20,
         x = d3.scale.linear().domain(minMax(years)).range([p * 2, w - p]),
         y = d3.scale.linear().domain([1, 110]).range([0, h - p]),
+        xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f')),
+        yAxis = d3.svg.axis().scale(y).orient('left'),
         tiers = [];
 
     var vis = d3.select('#chart')
             .append('svg')
-            .attr('width', w + p * 2)
-            .attr('height', h + p * 2)
+            .attr('width', w)
+            .attr('height', h)
             .append('g')
-            .attr('transform', 'translate(' + p + ',' + p + ')');
+            .attr('transform', 'translate(' + p + ',0)');
 
     var line = d3.svg.line()
             .x(function(d) { return x(parseInt(d['season'])); })
+            .y1(function(d) { return y(d[key]); });
+
+    var line = d3.svg.line()
+            .x(function(d) { return x(parseInt(d['season']) + 1); })
             .y(function(d) { return y(d[key]); })
             .defined(function(d) { return d[key] > 0; });
 
     var color = d3.scale.category10();
 
-    var lines = vis.selectAll('.line')
+    vis.selectAll('.line')
             .data(chartSeasons)
             .enter()
             .append('path')
@@ -153,6 +159,23 @@ function drawChart(seasons, key, chartTeams) {
             .attr('fill', 'none')
             .attr('stroke-width', 2)
             .attr('stroke', function(d) { return color(d['team']); });
+
+    vis.append('g')
+        .attr('transform', 'translate(0,' + (h - p) + ')')
+        .classed('axis', true)
+        .call(xAxis);
+
+    vis.append('g')
+        .classed('axis', true)
+        .attr('transform', 'translate(' + p * 2 + ',0)')
+        .call(yAxis);
+
+    vis.append('text')
+        .attr('transform', 'rotate(-90)')
+        .attr('x', -h/2)
+        .attr('y', 0)
+        .attr('text-anchor', 'middle')
+        .text('League position');
 
     // Colour in the legend items with the line colours.
     $.each(chartTeams, function(i, team) {

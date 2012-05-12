@@ -13,6 +13,15 @@
     float: left;
 }
 
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+}
+
+.axis text {
+    font-size: smaller;
+}
+
 .scrollable {
     overflow: auto;
     width: 20em;
