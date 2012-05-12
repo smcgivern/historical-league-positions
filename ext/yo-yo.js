@@ -116,7 +116,7 @@ function drawChart(seasons, key, chartTeams) {
         x = d3.scale.linear().domain([1880, 2010]).range([0, w]),
         y = d3.scale.linear().domain([0, 100]).range([0, h]);
 
-    var chartData = seasons.filter(function(teamSeasons) {
+    var chartSeasons = seasons.filter(function(teamSeasons) {
         return (chartTeams.indexOf(teamSeasons['team']) > -1);
     });
 
@@ -135,7 +135,7 @@ function drawChart(seasons, key, chartTeams) {
     var color = d3.scale.category10();
 
     var lines = vis.selectAll('.line')
-            .data(chartData)
+            .data(chartSeasons)
             .enter()
             .append('path')
             .attr('d', function(d) { return line(d.seasons); })
