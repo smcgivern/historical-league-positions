@@ -10,7 +10,7 @@ FILES = {
   :tiers_mapping => 'tiers.txt',
   :tier_sizes => 'tier-sizes.json',
   :seasons_mapped => 'seasons-mapped.json',
-  :seasons_reordered => 'seasons-reordered.json',
+  :seasons_reordered => 'seasons.json',
 }
 
 # Files that are 'final' and used in the ext/ directory.

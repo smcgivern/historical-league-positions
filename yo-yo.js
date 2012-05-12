@@ -4,7 +4,7 @@ var defaultTeams = ['accrington-stanley', 'everton', 'huddersfield', 'swansea',
 var allSeasons = null;
 var allTeams = null;
 
-d3.json('ext/seasons-reordered.json', function(s) {
+d3.json('ext/seasons.json', function(s) {
     allSeasons = s;
 
     d3.json('ext/teams.json', function(t) {
