@@ -9,6 +9,7 @@ FILES = {
   :tiers => 'tiers.json',
   :tiers_mapping => 'tiers.txt',
   :tier_sizes => 'tier-sizes.json',
+  :tier_sizes_reordered => 'tier-sizes-reordered.json',
   :seasons_mapped => 'seasons-mapped.json',
   :seasons_reordered => 'seasons-reordered.json',
   :final => 'football-league-positions.json',
@@ -19,7 +20,7 @@ FILES = {
 TO_EXT = {
   'teams' => FILES[:teams],
   'tiers' => FILES[:tiers],
-  'tierSizes' => FILES[:tier_sizes],
+  'tierSizes' => FILES[:tier_sizes_reordered],
   'seasons' => FILES[:seasons_reordered],
 }
 
@@ -88,6 +89,29 @@ file FILES[:tier_sizes] => [FILES[:seasons]] do
   puts ['Wrote tier sizes to ', FILES[:tier_sizes]].join
 
   write_json(FILES[:tier_sizes], tier_sizes)
+end
+
+# See the comment for seasons_reordered for an idea of the structure,
+# or view the output directly (it's small).
+#
+desc 'Reorder the tier sizes file for use in JS'
+file FILES[:tier_sizes_reordered] => [FILES[:tier_sizes]] do
+  tier_sizes = load_json(FILES[:tier_sizes])
+  all_seasons = tier_sizes['1'].keys
+
+  reordered = tier_sizes.map do |tier, seasons|
+    {
+      'tier' => tier,
+      'seasons' => all_seasons.sort.map do |season|
+        {'season' => season, 'size' => (seasons[season] || [0]).max}
+      end,
+    }
+  end.sort_by {|t| t['tier']}
+
+  puts ['Reordered data from ', FILES[:tier_sizes], ' in ',
+        FILES[:tier_sizes_reordered]].join
+
+  write_json(FILES[:tier_sizes_reordered], reordered)
 end
 
 # The teams.txt file needs to be created by hand; use the list_teams
