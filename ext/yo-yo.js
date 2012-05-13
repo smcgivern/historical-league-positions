@@ -155,14 +155,14 @@ function drawChart(seasons, key, chartTeams) {
     var color = d3.scale.category10();
 
     vis.selectAll('.line')
-            .data(chartSeasons)
-            .enter()
-            .append('path')
-            .attr('d', function(d) { return line(d['seasons']); })
-            .attr('class', 'line')
-            .attr('fill', 'none')
-            .attr('stroke-width', 2)
-            .attr('stroke', function(d) { return color(d['team']); });
+        .data(chartSeasons)
+        .enter()
+        .append('path')
+        .attr('d', function(d) { return line(d['seasons']); })
+        .attr('class', 'line')
+        .attr('fill', 'none')
+        .attr('stroke-width', 2)
+        .attr('stroke', function(d) { return color(d['team']); });
 
     vis.append('g')
         .attr('transform', 'translate(0,' + (h - p) + ')')
