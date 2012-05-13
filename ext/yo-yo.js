@@ -114,13 +114,17 @@ function selectTeams(teams) {
 //
 function minMax(a) { return [d3.min(a), d3.max(a)]; }
 
+// Gets the ending year of the season from the object.
+//
+function toSeason(o) { return parseInt(o['season']) + 1; }
+
 function drawChart(seasons, key, chartTeams) {
     var chartSeasons = seasons.filter(function(teamSeasons) {
         return (chartTeams.indexOf(teamSeasons['team']) > -1);
     });
 
     var years = $.map(chartSeasons[0]['seasons'], function(s) {
-        return parseInt(s['season']) + 1;
+        return toSeason(s);
     });
 
     var w = 700,
@@ -144,7 +148,7 @@ function drawChart(seasons, key, chartTeams) {
             .y1(function(d) { return y(d[key]); });
 
     var line = d3.svg.line()
-            .x(function(d) { return x(parseInt(d['season']) + 1); })
+            .x(function(d) { return x(toSeason(d); })
             .y(function(d) { return y(d[key]); })
             .defined(function(d) { return d[key] > 0; });
 
