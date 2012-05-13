@@ -31,8 +31,8 @@ CLOBBER.push(*FileList[FILES.values])
 
 desc 'Concatenate TO_EXT files into one and copy to ext/.'
 file FILES[:final] => TO_EXT.values do
-  (["Making #{FILES[:final]} from:"] + TO_EXT.values).
-    each {|x| puts "  #{x}"}
+  puts "Making #{FILES[:final]} from:"
+  TO_EXT.values.each {|x| puts "* #{x}"}
 
   final = {}
 
