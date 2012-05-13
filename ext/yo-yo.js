@@ -119,6 +119,10 @@ function minMax(a) { return [d3.min(a), d3.max(a)]; }
 function toSeason(o) { return parseInt(o['season']) + 1; }
 
 function drawChart(seasons, key, chartTeams) {
+    var w = 700,
+        h = 300,
+        p = 20;
+
     var chartSeasons = seasons.filter(function(teamSeasons) {
         return (chartTeams.indexOf(teamSeasons['team']) > -1);
     });
@@ -127,14 +131,22 @@ function drawChart(seasons, key, chartTeams) {
         return toSeason(s);
     });
 
-    var w = 700,
-        h = 300,
-        p = 20,
-        x = d3.scale.linear().domain(minMax(years)).range([p * 2, w - p]),
-        y = d3.scale.linear().domain([1, 110]).range([0, h - p]),
+    var stack = d3.layout.stack()
+            .values(function(d) { return d['seasons']; })
+            .x(function(d) { return toSeason(d); })
+            .y(function(d) { return d['size']; })
+            .out(function(d, y0, y) { d['size0'] = y0; });
+
+    var stacked = stack($.extend(true, [], allTierSizes));
+
+    var maxSize = d3.max(d3.last(stacked)['seasons'], function(x) {
+        return x['size'] + x['size0'];
+    });
+
+    var x = d3.scale.linear().domain(minMax(years)).range([p * 2, w - p]),
+        y = d3.scale.linear().domain([1, maxSize]).range([0, h - p]),
         xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f')),
-        yAxis = d3.svg.axis().scale(y).orient('left'),
-        tiers = [];
+        yAxis = d3.svg.axis().scale(y).orient('left');
 
     var vis = d3.select('#chart')
             .append('svg')
@@ -143,16 +155,25 @@ function drawChart(seasons, key, chartTeams) {
             .append('g')
             .attr('transform', 'translate(' + p + ',0)');
 
-    var line = d3.svg.line()
-            .x(function(d) { return x(parseInt(d['season'])); })
-            .y1(function(d) { return y(d[key]); });
+    var area = d3.svg.area()
+            .x(function(d) { return x(toSeason(d)); })
+            .y0(function(d) { return y(d['size0']); })
+            .y1(function(d) { return (y(d['size0'] + d['size'])); });
 
     var line = d3.svg.line()
-            .x(function(d) { return x(toSeason(d); })
+            .x(function(d) { return x(toSeason(d)); })
             .y(function(d) { return y(d[key]); })
             .defined(function(d) { return d[key] > 0; });
 
     var color = d3.scale.category10();
+
+    vis.selectAll('.area')
+        .data(stacked)
+        .enter()
+        .append('path')
+        .attr('d', function(d) { return area(d['seasons']); })
+        .attr('fill', '#eec')
+        .attr('opacity', function(d, i) { return 0.3 + 0.5 * (i % 2); });
 
     vis.selectAll('.line')
         .data(chartSeasons)
