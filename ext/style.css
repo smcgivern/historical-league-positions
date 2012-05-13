@@ -11,6 +11,8 @@
 
 #chart {
     float: left;
+    border: 1px solid black;
+    margin-right: 0.5em;
 }
 
 .axis path, .axis line {
