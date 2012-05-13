@@ -200,7 +200,7 @@ function drawChart(seasons, key, chartTeams) {
         .attr('x', -h/2)
         .attr('y', 0)
         .attr('text-anchor', 'middle')
-        .text('League position');
+        .text('Overall league position');
 
     // Colour in the legend items with the line colours.
     $.each(chartTeams, function(i, team) {
