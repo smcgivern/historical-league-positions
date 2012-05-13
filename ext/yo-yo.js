@@ -158,7 +158,7 @@ function drawChart(seasons, key, chartTeams) {
             .data(chartSeasons)
             .enter()
             .append('path')
-            .attr('d', function(d) { return line(d.seasons); })
+            .attr('d', function(d) { return line(d['seasons']); })
             .attr('class', 'line')
             .attr('fill', 'none')
             .attr('stroke-width', 2)
