@@ -165,10 +165,7 @@ function chart() {
             .attr('min', d3.min(tierYears))
             .attr('max', d3.max(tierYears));
 
-        $('#min-year').val(d3.min(tierYears));
-        $('#max-year').val(d3.max(tierYears));
-
-        my.setRange();
+        my.setRange.apply(null, d3.extent(tierYears));
 
         stacked = stack($.extend(true, [], tierSizes));
 
@@ -185,9 +182,19 @@ function chart() {
         return my;
     };
 
-    my.setRange = function() {
+    my.setRange = function(min, max) {
+        // Get the arguments from the form if undefined; else, propogate to the
+        // form.
+        if (!arguments.length) {
+            min = $('#min-year').val();
+            max = $('#max-year').val();
+        } else {
+            $('#min-year').val(min);
+            $('#max-year').val(max);
+        };
+
         x = d3.scale.linear()
-            .domain([$('#min-year').val(), $('#max-year').val()])
+            .domain([min, max])
             .range([padding * 2, width - padding]);
 
         xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f'));
