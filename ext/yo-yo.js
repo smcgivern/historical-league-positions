@@ -114,11 +114,6 @@ function selectTeams(teams) {
     }
 }
 
-// Returns the min and max values of the array, used in the domain of
-// a scale.
-//
-function minMax(a) { return [d3.min(a), d3.max(a)]; }
-
 // Gets the ending year of the season from the object.
 //
 function toSeason(o) { return parseInt(o['season']) + 1; }
@@ -129,7 +124,7 @@ function chart() {
         height = width / 2,
         padding = 20;
 
-    var tierSizes, years, stacked, leagueSize, x, y, xAxis, yAxis;
+    var tierSizes, tierYears, stacked, leagueSize, x, y, xAxis, yAxis;
     var seasons, chartTeams, chartSeasons;
 
     var stack = d3.layout.stack()
@@ -161,9 +156,19 @@ function chart() {
 
         tierSizes = _;
 
-        years = $.map(tierSizes[0]['seasons'], function(s) {
+        tierYears = $.map(tierSizes[0]['seasons'], function(s) {
             return toSeason(s);
         });
+
+        $('#options .year')
+            .change(function() { charter.setRange(); })
+            .attr('min', d3.min(tierYears))
+            .attr('max', d3.max(tierYears));
+
+        $('#min-year').val(d3.min(tierYears));
+        $('#max-year').val(d3.max(tierYears));
+
+        my.setRange();
 
         stacked = stack($.extend(true, [], tierSizes));
 
@@ -171,16 +176,21 @@ function chart() {
             return x['size'] + x['size0'];
         });
 
-        x = d3.scale.linear()
-            .domain(minMax(years))
-            .range([padding * 2, width - padding]);
-
         y = d3.scale.linear()
             .domain([1, leagueSize])
             .range([0, height - padding]);
 
-        xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f'));
         yAxis = d3.svg.axis().scale(y).orient('left');
+
+        return my;
+    };
+
+    my.setRange = function() {
+        x = d3.scale.linear()
+            .domain([$('#min-year').val(), $('#max-year').val()])
+            .range([padding * 2, width - padding]);
+
+        xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f'));
 
         return my;
     };
@@ -253,6 +263,7 @@ function chart() {
             vis.append('g')
                 .attr('transform', 'translate(0,' + (height - padding) + ')')
                 .classed('axis', true)
+                .attr('id', 'x-axis')
                 .call(xAxis);
 
             vis.append('g')
