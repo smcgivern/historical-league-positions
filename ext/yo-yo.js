@@ -42,7 +42,8 @@ function createTeamSelector(teams) {
         var team = teams[id];
 
         var label = element('label', team[0],
-                            {'for': teamID(id), 'title': team.join(', ')});
+                            {'for': teamID(id), 'title': team.join(', '),
+                             'onclick': ''});
 
         var input = element('input', '',
                             {'id': teamID(id), 'type': 'checkbox'});
