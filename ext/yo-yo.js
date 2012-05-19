@@ -3,6 +3,8 @@ var defaultTeams = ['accrington-stanley', 'everton', 'huddersfield', 'swansea',
 
 var allSeasons, allTeams, allTiers, allTierSizes;
 
+var charter = chart();
+
 // Create an element by name with optional text content and attributes.
 //
 function element(name, content, attributes) {
@@ -88,14 +90,12 @@ function teamID(team) {
     return (team.id || $('input', team)[0].id).slice(5);
 }
 
-// Clear the chart and draw it with only the teams who are checked.
+// Draw the chart with only the teams who are checked.
 //
 function redrawChart() {
     var teams = $.map($('#team-list input:checked'), teamID);
 
-    $('#chart').empty();
-
-    drawChart(allSeasons, 'effective-position', teams.sort());
+    d3.select('#chart').call(charter.chartTeams(teams.sort()).refresh);
 }
 
 // Clear the currently selected teams and instead check all of the teams in the
@@ -118,42 +118,20 @@ function minMax(a) { return [d3.min(a), d3.max(a)]; }
 //
 function toSeason(o) { return parseInt(o['season']) + 1; }
 
-function drawChart(seasons, key, chartTeams) {
-    var w = 700,
-        h = 300,
-        p = 20;
+function chart() {
+    var my = {},
+        width = 700,
+        height = width / 2,
+        padding = 20;
 
-    var chartSeasons = seasons.filter(function(teamSeasons) {
-        return (chartTeams.indexOf(teamSeasons['team']) > -1);
-    });
-
-    var years = $.map(chartSeasons[0]['seasons'], function(s) {
-        return toSeason(s);
-    });
+    var tierSizes, years, stacked, leagueSize, x, y, xAxis, yAxis;
+    var seasons, chartTeams, chartSeasons;
 
     var stack = d3.layout.stack()
             .values(function(d) { return d['seasons']; })
             .x(function(d) { return toSeason(d); })
             .y(function(d) { return d['size']; })
             .out(function(d, y0, y) { d['size0'] = y0; });
-
-    var stacked = stack($.extend(true, [], allTierSizes));
-
-    var maxSize = d3.max(d3.last(stacked)['seasons'], function(x) {
-        return x['size'] + x['size0'];
-    });
-
-    var x = d3.scale.linear().domain(minMax(years)).range([p * 2, w - p]),
-        y = d3.scale.linear().domain([1, maxSize]).range([0, h - p]),
-        xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f')),
-        yAxis = d3.svg.axis().scale(y).orient('left');
-
-    var vis = d3.select('#chart')
-            .append('svg')
-            .attr('width', w)
-            .attr('height', h)
-            .append('g')
-            .attr('transform', 'translate(' + p + ',0)');
 
     var area = d3.svg.area()
             .x(function(d) { return x(toSeason(d)); })
@@ -162,50 +140,131 @@ function drawChart(seasons, key, chartTeams) {
 
     var line = d3.svg.line()
             .x(function(d) { return x(toSeason(d)); })
-            .y(function(d) { return y(d[key]); })
-            .defined(function(d) { return d[key] > 0; });
+            .y(function(d) { return y(d['effective-position']); })
+            .defined(function(d) { return d['effective-position'] > 0; });
 
-    var color = d3.scale.category10();
+    my.width = function(_) {
+        if (!arguments.length) return width; width = _; return my;
+    };
 
-    vis.selectAll('.area')
-        .data(stacked)
-        .enter()
-        .append('path')
-        .attr('d', function(d) { return area(d['seasons']); })
-        .attr('fill', '#eec')
-        .attr('opacity', function(d, i) { return 0.3 + 0.5 * (i % 2); });
+    my.height = function(_) {
+        if (!arguments.length) return height; height = _; return my;
+    };
 
-    vis.selectAll('.line')
-        .data(chartSeasons)
-        .enter()
-        .append('path')
-        .attr('d', function(d) { return line(d['seasons']); })
-        .attr('class', 'line')
-        .attr('fill', 'none')
-        .attr('stroke-width', 2)
-        .attr('stroke', function(d) { return color(d['team']); });
+    my.tierSizes = function(_) {
+        if (!arguments.length) return tierSizes;
 
-    vis.append('g')
-        .attr('transform', 'translate(0,' + (h - p) + ')')
-        .classed('axis', true)
-        .call(xAxis);
+        tierSizes = _;
 
-    vis.append('g')
-        .classed('axis', true)
-        .attr('transform', 'translate(' + p * 2 + ',0)')
-        .call(yAxis);
+        years = $.map(tierSizes[0]['seasons'], function(s) {
+            return toSeason(s);
+        });
 
-    vis.append('text')
-        .attr('transform', 'rotate(-90)')
-        .attr('x', -h/2)
-        .attr('y', 0)
-        .attr('text-anchor', 'middle')
-        .text('Overall league position');
+        stacked = stack($.extend(true, [], tierSizes));
 
-    // Colour in the legend items with the line colours.
-    $.each(chartTeams, function(i, team) {
-        $('.key', $('#' + teamID(team)).parent()).css('color', color(team));
-    });
+        leagueSize = d3.max(d3.last(stacked)['seasons'], function(x) {
+            return x['size'] + x['size0'];
+        });
+
+        x = d3.scale.linear()
+            .domain(minMax(years))
+            .range([padding * 2, width - padding]);
+
+        y = d3.scale.linear()
+            .domain([1, leagueSize])
+            .range([0, height - padding]);
+
+        xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f'));
+        yAxis = d3.svg.axis().scale(y).orient('left');
+
+        return my;
+    };
+
+    my.seasons = function(_) {
+        if (!arguments.length) return seasons; seasons = _; return my;
+    };
+
+    my.chartTeams = function(_) {
+        if (!arguments.length) return chartTeams;
+
+        chartTeams = _;
+
+        chartSeasons = my.seasons().filter(function(teamSeasons) {
+            return (chartTeams.indexOf(teamSeasons['team']) > -1);
+        });
+
+        return my;
+    };
+
+    my.refresh = function(selection) {
+        selection.each(function() {
+            var vis = d3.select(this).select('svg').select('g');
+
+            var color = d3.scale.category10();
+
+            var lines = vis.selectAll('.line')
+                    .data(chartSeasons, function (d) { return d['team']; });
+
+            lines.exit().remove();
+
+            lines
+                .enter()
+                .append('path')
+                .attr('d', function(d) { return line(d['seasons']); })
+                .attr('class', 'line')
+                .attr('fill', 'none')
+                .attr('stroke-width', 2);
+
+            lines
+                .attr('stroke', function(d) { return color(d['team']); });
+
+            // Colour in the legend items with the line colours.
+            $.each(chartTeams, function(i, team) {
+                $('.key', $('#' + teamID(team)).parent())
+                    .css('color', color(team));
+            });
+        });
+    };
+
+    my.init = function(selection) {
+        selection.each(function() {
+            d3.select(this).select('svg').remove();
+
+            var vis = d3.select(this)
+                    .append('svg')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .append('g')
+                    .attr('transform', 'translate(' + padding + ',0)');
+
+            vis.selectAll('.area')
+                .data(stacked)
+                .enter()
+                .append('path')
+                .attr('d', function(d) { return area(d['seasons']); })
+                .attr('fill', '#eec')
+                .attr('opacity', function(d, i) { return .3 + .5 * (i % 2); });
+
+            vis.append('g')
+                .attr('transform', 'translate(0,' + (height - padding) + ')')
+                .classed('axis', true)
+                .call(xAxis);
+
+            vis.append('g')
+                .classed('axis', true)
+                .attr('transform', 'translate(' + padding * 2 + ',0)')
+                .call(yAxis);
+
+            vis.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', 0)
+                .attr('text-anchor', 'middle')
+                .text('Overall league position');
+        });
+    };
+
+    return my;
 }
 
 d3.json('ext/football-league-positions.json', function(data) {
@@ -213,6 +272,11 @@ d3.json('ext/football-league-positions.json', function(data) {
     allTeams = data['teams'];
     allTiers = data['tiers'];
     allTierSizes = data['tierSizes'];
+
+    d3.select('#chart').call(charter
+                             .tierSizes(allTierSizes)
+                             .seasons(allSeasons)
+                             .init);
 
     createTeamSelector(allTeams);
     selectTeams(defaultTeams);
