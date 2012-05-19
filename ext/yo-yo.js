@@ -116,7 +116,7 @@ function selectTeams(teams) {
 
 // Gets the ending year of the season from the object.
 //
-function toSeason(o) { return parseInt(o['season']) + 1; }
+function toSeason(o) { return parseInt(o.season) + 1; }
 
 function chart() {
     var my = {},
@@ -128,15 +128,15 @@ function chart() {
     var seasons, chartTeams, chartSeasons;
 
     var stack = d3.layout.stack()
-            .values(function(d) { return d['seasons']; })
+            .values(function(d) { return d.seasons; })
             .x(function(d) { return toSeason(d); })
-            .y(function(d) { return d['size']; })
-            .out(function(d, y0, y) { d['size0'] = y0; });
+            .y(function(d) { return d.size; })
+            .out(function(d, y0, y) { d.size0 = y0; });
 
     var area = d3.svg.area()
             .x(function(d) { return x(toSeason(d)); })
-            .y0(function(d) { return y(d['size0']); })
-            .y1(function(d) { return (y(d['size0'] + d['size'])); });
+            .y0(function(d) { return y(d.size0); })
+            .y1(function(d) { return (y(d.size0 + d.size)); });
 
     var line = d3.svg.line()
             .x(function(d) { return x(toSeason(d)); })
@@ -156,7 +156,7 @@ function chart() {
 
         tierSizes = _;
 
-        tierYears = $.map(tierSizes[0]['seasons'], function(s) {
+        tierYears = $.map(tierSizes[0].seasons, function(s) {
             return toSeason(s);
         });
 
@@ -172,8 +172,8 @@ function chart() {
 
         stacked = stack($.extend(true, [], tierSizes));
 
-        leagueSize = d3.max(d3.last(stacked)['seasons'], function(x) {
-            return x['size'] + x['size0'];
+        leagueSize = d3.max(d3.last(stacked).seasons, function(x) {
+            return x.size + x.size0;
         });
 
         y = d3.scale.linear()
@@ -195,10 +195,10 @@ function chart() {
         d3.select('#chart #x-axis').call(xAxis);
 
         d3.selectAll('#chart .line')
-            .attr('d', function(d) { return line(d['seasons']); });
+            .attr('d', function(d) { return line(d.seasons); });
 
         d3.selectAll('#chart .area')
-            .attr('d', function(d) { return area(d['seasons']); });
+            .attr('d', function(d) { return area(d.seasons); });
 
         return my;
     };
@@ -213,7 +213,7 @@ function chart() {
         chartTeams = _;
 
         chartSeasons = my.seasons().filter(function(teamSeasons) {
-            return (chartTeams.indexOf(teamSeasons['team']) > -1);
+            return (chartTeams.indexOf(teamSeasons.team) > -1);
         });
 
         return my;
@@ -221,25 +221,23 @@ function chart() {
 
     my.refresh = function(selection) {
         selection.each(function() {
-            var vis = d3.select(this).select('svg').select('g');
-
-            var color = d3.scale.category10();
-
-            var lines = vis.selectAll('.line')
-                    .data(chartSeasons, function (d) { return d['team']; });
+            var color = d3.scale.category10(),
+                lines = d3.select(this).select('#chart-body')
+                    .selectAll('.line')
+                    .data(chartSeasons, function (d) { return d.team; });
 
             lines.exit().remove();
 
             lines
                 .enter()
                 .append('path')
-                .attr('d', function(d) { return line(d['seasons']); })
+                .attr('d', function(d) { return line(d.seasons); })
                 .classed('line', true)
                 .attr('fill', 'none')
                 .attr('stroke-width', 2);
 
             lines
-                .attr('stroke', function(d) { return color(d['team']); });
+                .attr('stroke', function(d) { return color(d.team); });
 
             // Colour in the legend items with the line colours.
             $.each(chartTeams, function(i, team) {
@@ -277,7 +275,7 @@ function chart() {
                 .data(stacked)
                 .enter()
                 .append('path')
-                .attr('d', function(d) { return area(d['seasons']); })
+                .attr('d', function(d) { return area(d.seasons); })
                 .classed('area', true)
                 .attr('fill', '#eec')
                 .attr('opacity', function(d, i) { return .3 + .5 * (i % 2); });
@@ -306,10 +304,10 @@ function chart() {
 }
 
 d3.json('ext/football-league-positions.json', function(data) {
-    allSeasons = data['seasons'];
-    allTeams = data['teams'];
-    allTiers = data['tiers'];
-    allTierSizes = data['tierSizes'];
+    allSeasons = data.seasons;
+    allTeams = data.teams;
+    allTiers = data.tiers;
+    allTierSizes = data.tierSizes;
 
     d3.select('#chart').call(charter
                              .tierSizes(allTierSizes)
