@@ -258,6 +258,49 @@ file FILES[:seasons], [:start, :finish, :base] do |t, args|
   write_json(FILES[:seasons], seasons)
 end
 
+# For seasons not covered by the RSSSF, this adds them from some
+# hand-generated TSV (tab-separated files). The format is demonstrated
+# in manual/2011-12.1.tsv.example, although it doesn't have to be
+# exact, the rules are just:
+# 1) the filename is season.tier.tsv, where season is like '2010-11';
+# 2) start with a header / info line, containing no tabs;
+# 3) follow with the header row, separated by tabs, and doesn't start
+#    with a number;
+# 4) and then the table itself, each row of which must start with a
+#    number.
+#
+desc 'Add tab-separated league tables to RSSSF file.'
+task :add_tsvs, [:directory] do |t, args|
+  args.with_defaults(:directory => 'manual')
+  seasons = load_json(FILES[:seasons])
+
+  Dir["#{args[:directory]}/*.*.tsv"].each do |filename|
+    season, tier = filename.split('/').last.split('.')
+    division = {'tier' => tier.to_i}
+
+    open(filename).each_line do |line|
+      line = line.strip.split("\t")
+
+      (division['info'] = line; next) if line.length == 1
+
+      # Dummy item to take the places of the 'caps' item from the
+      # RSSSF parser.
+      #
+      line.unshift(nil)
+
+      (division['header'] = line; next) unless line[1].to_i > 0
+
+      division['table'] ||= []
+      division['table'] << line.map {|x| x =~ /^\d+$/ ? x.to_i : x}
+    end
+
+    seasons[season] ||= []
+    seasons[season] << division
+  end
+
+  write_json(FILES[:seasons], seasons)
+end
+
 def create_from_mapping(key)
   mapping = "#{key}_mapping".to_sym
   mapped = {}
