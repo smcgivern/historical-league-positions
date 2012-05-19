@@ -140,8 +140,8 @@ function chart() {
 
     var line = d3.svg.line()
             .x(function(d) { return x(toSeason(d)); })
-            .y(function(d) { return y(d['effective-position']); })
-            .defined(function(d) { return d['effective-position'] > 0; });
+            .y(function(d) { return y(d.effectivePosition); })
+            .defined(function(d) { return d.effectivePosition > 0; });
 
     my.width = function(_) {
         if (!arguments.length) return width; width = _; return my;

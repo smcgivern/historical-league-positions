@@ -155,7 +155,7 @@ end
 #           "season": "1926-27",
 #           "position": 22,
 #           "tier": 3,
-#           "effective-position": 66
+#           "effectivePosition": 66
 #         },
 #         ... etc ...
 #       ]
@@ -192,7 +192,7 @@ file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
           'season' => season,
           'tier' => division['tier'],
           'position' => row[1],
-          'effective-position' => row[1] + offset.to_i,
+          'effectivePosition' => row[1] + offset.to_i,
         }
       end
     end
@@ -248,9 +248,10 @@ file FILES[:seasons], [:start, :finish, :base] do |t, args|
     page.search('pre').each do |pre|
       divisions, tier = *parse_rsssf_tables(pre.inner_text, tier)
 
-      unless tier > 4
-        seasons[season] ||= []
-        seasons[season] += divisions if divisions
+      seasons[season] ||= []
+
+      if divisions
+        seasons[season] += divisions.select {|d| d[:tier] <= 4}
       end
     end
   end
