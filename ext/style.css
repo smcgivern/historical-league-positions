@@ -3,7 +3,7 @@ body {
     max-width: 65em;
 }
 
-#team-list {
+#options {
     display: none;
     line-height: normal;
     float: left;

@@ -53,7 +53,7 @@ function createTeamSelector(teams) {
         teamList.append(element('li').append(key).append(input).append(label));
     }
 
-    $('#team-list').show();
+    $('#options').show();
 }
 
 // Moves a team from the selected to unselected list, or vice versa. Inserts in
