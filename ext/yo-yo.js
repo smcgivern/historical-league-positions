@@ -192,6 +192,14 @@ function chart() {
 
         xAxis = d3.svg.axis().scale(x).tickFormat(d3.format('0f'));
 
+        d3.select('#chart #x-axis').call(xAxis);
+
+        d3.selectAll('#chart .line')
+            .attr('d', function(d) { return line(d['seasons']); });
+
+        d3.selectAll('#chart .area')
+            .attr('d', function(d) { return area(d['seasons']); });
+
         return my;
     };
 
@@ -226,7 +234,7 @@ function chart() {
                 .enter()
                 .append('path')
                 .attr('d', function(d) { return line(d['seasons']); })
-                .attr('class', 'line')
+                .classed('line', true)
                 .attr('fill', 'none')
                 .attr('stroke-width', 2);
 
@@ -246,17 +254,31 @@ function chart() {
             d3.select(this).select('svg').remove();
 
             var vis = d3.select(this)
-                    .insert('svg', 'div')
+                    .insert('svg', '#options')
                     .attr('width', width)
                     .attr('height', height)
                     .append('g')
                     .attr('transform', 'translate(' + padding + ',0)');
 
-            vis.selectAll('.area')
+            var clip = vis.append('defs').append('clipPath')
+                    .attr('id', 'clip')
+                    .append('rect')
+                    .attr('id', 'clip-rect')
+                    .attr('x', padding * 2)
+                    .attr('y', 0)
+                    .attr('width', width - padding * 2)
+                    .attr('height', height);
+
+            var chartBody = vis.append('g')
+                    .attr('id', 'chart-body')
+                    .attr('clip-path', 'url(#clip)');
+
+            chartBody.selectAll('.area')
                 .data(stacked)
                 .enter()
                 .append('path')
                 .attr('d', function(d) { return area(d['seasons']); })
+                .classed('area', true)
                 .attr('fill', '#eec')
                 .attr('opacity', function(d, i) { return .3 + .5 * (i % 2); });
 
