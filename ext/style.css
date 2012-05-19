@@ -1,5 +1,6 @@
 #team-selector {
     display: none;
+    line-height: normal;
 }
 
 #team-list ol {
@@ -7,6 +8,10 @@
     margin-left: 0em;
     padding-left: 0em;
     width: auto;
+}
+
+#team-filter {
+    width: 10em;
 }
 
 #chart {
