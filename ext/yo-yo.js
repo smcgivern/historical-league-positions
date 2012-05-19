@@ -41,6 +41,7 @@ function createTeamSelector(teams) {
         var id = teamIDs[i];
         var team = teams[id];
 
+        // The empty onclick is needed for iOS to activate the label.
         var label = element('label', team[0],
                             {'for': teamID(id), 'title': team.join(', '),
                              'onclick': ''});
