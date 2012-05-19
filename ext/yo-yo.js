@@ -107,7 +107,7 @@ function redrawChart() {
 // list passed.
 //
 function selectTeams(teams) {
-    $('#team-list input:checked').prop('checked', false);
+    $('#team-list input:checked').prop('checked', false).change();
 
     for (var i = 0; i < teams.length; i++) {
         $('#' + teamID(teams[i])).prop('checked', true).change();
