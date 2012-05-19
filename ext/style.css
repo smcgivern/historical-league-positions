@@ -10,6 +10,11 @@
     width: auto;
 }
 
+#too-many-teams-warning {
+    display: none;
+    color: red;
+}
+
 #team-filter {
     width: 10em;
 }

@@ -90,10 +90,17 @@ function teamID(team) {
     return (team.id || $('input', team)[0].id).slice(5);
 }
 
-// Draw the chart with only the teams who are checked.
+// Draw the chart with only the teams who are checked. If more than 10
+// teams are selected, add a warning.
 //
 function redrawChart() {
     var teams = $.map($('#team-list input:checked'), teamID);
+
+    if (teams.length > 10) {
+        $('#too-many-teams-warning').show();
+    } else {
+        $('#too-many-teams-warning').hide();
+    }
 
     d3.select('#chart').call(charter.chartTeams(teams.sort()).refresh);
 }
