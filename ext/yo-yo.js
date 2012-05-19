@@ -161,11 +161,11 @@ function chart() {
         });
 
         $('#options .year')
-            .change(function() { charter.setRange(); })
+            .change(function() { charter.range(); })
             .attr('min', d3.min(tierYears))
             .attr('max', d3.max(tierYears));
 
-        my.setRange.apply(null, d3.extent(tierYears));
+        my.range.apply(null, d3.extent(tierYears));
 
         stacked = stack($.extend(true, [], tierSizes));
 
@@ -182,7 +182,7 @@ function chart() {
         return my;
     };
 
-    my.setRange = function(min, max) {
+    my.range = function(min, max) {
         // Get the arguments from the form if undefined; else, propogate to the
         // form.
         if (!arguments.length) {
