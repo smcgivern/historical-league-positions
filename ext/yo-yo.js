@@ -18,7 +18,7 @@ function element(name, content, attributes) {
 
 function createTeamSelector(teams) {
     var teamList = $('#teams-unselected');
-    var teamIDs = [];
+    var teamIDs = d3.keys(teams).sort();
 
     // Enable the filter box, which hides all items that don't match
     // the filter in their label's title. (The title attribute for the
@@ -32,10 +32,6 @@ function createTeamSelector(teams) {
             return (comparator.indexOf(filter) === -1);
         }).hide();
     });
-
-    // Get a list of team IDs and put in alphabetical order.
-    for (var t in teams) { teamIDs.push(t); }
-    teamIDs.sort();
 
     for (var i = 0; i < teamIDs.length; i++) {
         var id = teamIDs[i];
