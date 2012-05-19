@@ -1,6 +1,13 @@
-#team-selector {
+body {
+    margin: 0em auto;
+    max-width: 65em;
+}
+
+#team-list {
     display: none;
     line-height: normal;
+    float: left;
+    width: 13em;
 }
 
 #team-list ol {
@@ -16,10 +23,10 @@
 }
 
 #team-filter {
-    width: 10em;
+    width: 8em;
 }
 
-#chart {
+#chart svg {
     float: left;
     border: 1px solid black;
     margin-right: 0.5em;
@@ -36,7 +43,6 @@
 
 .scrollable {
     overflow: auto;
-    width: 20em;
     height: 10em;
 }
 

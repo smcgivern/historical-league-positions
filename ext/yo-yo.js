@@ -55,7 +55,7 @@ function createTeamSelector(teams) {
         teamList.append(element('li').append(key).append(input).append(label));
     }
 
-    $('#team-selector').show();
+    $('#team-list').show();
 }
 
 // Moves a team from the selected to unselected list, or vice versa. Inserts in
@@ -238,7 +238,7 @@ function chart() {
             d3.select(this).select('svg').remove();
 
             var vis = d3.select(this)
-                    .append('svg')
+                    .insert('svg', 'div')
                     .attr('width', width)
                     .attr('height', height)
                     .append('g')
