@@ -2,6 +2,8 @@ require 'rake/clean'
 require 'fileutils'
 require 'json'
 
+Encoding.default_external = Encoding::UTF_8
+
 FILES = {
   :seasons => 'rsssf-seasons.json',
   :teams => 'teams.json',
