@@ -129,6 +129,7 @@ desc 'Map the team IDs from teams.json to the seasons file.'
 file FILES[:seasons_mapped] => [FILES[:teams], FILES[:seasons]] do
   teams = {}
   seasons = load_json(FILES[:seasons])
+  nils = []
 
   load_json(FILES[:teams]).each do |id, names|
     names.each {|n| teams[n] = id}
@@ -137,9 +138,17 @@ file FILES[:seasons_mapped] => [FILES[:teams], FILES[:seasons]] do
   seasons.each do |season, divisions|
     divisions.each_with_index do |division, i|
       division['table'].each_with_index do |row, j|
+        nils << row[2] if teams[row[2]].nil?
+
         seasons[season][i]['table'][j][2] = teams[row[2]]
       end
     end
+  end
+
+  unless nils.empty?
+    puts 'Teams without mappings found. Add these to teams.txt and regenerate teams.json:'
+    puts nils.join("\n")
+    exit 1
   end
 
   puts ['Replacing names in ', FILES[:seasons], ' with IDs from ',
