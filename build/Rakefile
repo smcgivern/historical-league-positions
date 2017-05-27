@@ -303,7 +303,7 @@ task :add_tsvs, [:directory] do |t, args|
       (division['header'] = line; next) unless line[1].to_i > 0
 
       division['table'] ||= []
-      division['table'] << line.map {|x| x =~ /^\d+$/ ? x.to_i : x}
+      division['table'] << line.map {|x| x.strip!; x =~ /^\d+$/ ? x.to_i : x}
     end
 
     seasons[season] ||= []
