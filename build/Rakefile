@@ -193,6 +193,8 @@ file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
       division['table'].each do |row|
         team = row[2]
         season_teams << team
+        position = row[1]
+        position = position.strip.to_i if position.is_a?(String)
 
         offset = (1...(division['tier'])).inject(0) do |sum, tier|
           sum + tier_sizes[tier.to_s][season].first
@@ -202,8 +204,8 @@ file FILES[:seasons_reordered] => [FILES[:seasons_mapped],
         teams[team] << {
           'season' => season,
           'tier' => division['tier'],
-          'position' => row[1],
-          'effectivePosition' => row[1] + offset.to_i,
+          'position' => position,
+          'effectivePosition' => position + offset.to_i,
         }
       end
     end
@@ -238,7 +240,7 @@ end
 #
 desc 'Parse league tables from the RSSSF. See rsssf_parsing.rb.'
 file FILES[:seasons], [:start, :finish, :base] do |t, args|
-  require 'rsssf_parsing'
+  require './rsssf_parsing'
 
   args.with_defaults(:start => 1888,
                      :finish => 2007,
@@ -303,7 +305,7 @@ task :add_tsvs, [:directory] do |t, args|
       (division['header'] = line; next) unless line[1].to_i > 0
 
       division['table'] ||= []
-      division['table'] << line.map {|x| x.strip!; x =~ /^\d+$/ ? x.to_i : x}
+      division['table'] << line.map {|x| x.strip! if x; x =~ /^\d+$/ ? x.to_i : x}
     end
 
     seasons[season] ||= []
