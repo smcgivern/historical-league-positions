@@ -288,7 +288,7 @@ task :add_tsvs, [:directory] do |t, args|
   args.with_defaults(:directory => 'manual')
   seasons = load_json(FILES[:seasons])
 
-  Dir["#{args[:directory]}/*.*.tsv"].each do |filename|
+  Dir["#{args[:directory]}/**/*.*.tsv"].each do |filename|
     season, tier = filename.split('/').last.split('.')
     division = {'tier' => tier.to_i}
 
