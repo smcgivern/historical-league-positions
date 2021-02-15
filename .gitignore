@@ -1,3 +1,5 @@
-build/*.txt
+build/*.csv
 build/*.json
+build/*.txt
 build/manual
+build/backup-*

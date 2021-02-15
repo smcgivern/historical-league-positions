@@ -1,6 +1,7 @@
 require 'rake/clean'
 require 'fileutils'
 require 'json'
+require 'csv'
 
 Encoding.default_external = Encoding::UTF_8
 
@@ -15,6 +16,7 @@ FILES = {
   :seasons_mapped => 'seasons-mapped.json',
   :seasons_reordered => 'seasons-reordered.json',
   :final => 'football-league-positions.json',
+  :final_csv => 'historical-league-positions.csv',
 }
 
 # Files that are 'final' and used in the ext/ directory.
@@ -44,6 +46,23 @@ file FILES[:final] => TO_EXT.values do
   write_json(FILES[:final], final, :generate)
 
   FileUtils.copy(FILES[:final], '../ext/')
+end
+
+desc 'Generate the CSV version of the dataset.'
+file FILES[:final_csv] => FILES[:seasons_reordered] do
+  seasons_reordered = load_json(FILES[:seasons_reordered])
+
+  CSV.open(FILES[:final_csv], 'wb') do |csv|
+    csv << ['Team', 'Season', 'Tier', 'Position', 'Effective position']
+
+    seasons_reordered.each do |team|
+      team['seasons'].each do |season|
+        csv << [team['team'], season['season'], season['tier'], season['position'], season['effectivePosition']]
+      end
+    end
+  end
+
+  FileUtils.copy(FILES[:final_csv], '../ext/')
 end
 
 desc 'List the unique team names from the seasons file.'

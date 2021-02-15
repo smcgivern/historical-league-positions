@@ -16,8 +16,8 @@ the last few seasons) but the majority comes from the wonderful
 5. `bundle exec rake list_teams > teams.txt` and edit that file to be
    key=value;
 6. `bundle exec rake list_tiers > tiers.txt`, same again;
-7. `bundle exec rake football-league-positions.json` for the final
-   file to go into `ext/`.
+7. `bundle exec rake football-league-positions.json
+   historical-league-positions.csv` for the final files to go into `ext/`.
 
 There's no particular reason for its existence, I just wanted to see
 the rises and falls of teams like Swansea and Southampton in a
