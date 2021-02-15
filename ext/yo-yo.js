@@ -1,5 +1,4 @@
-var defaultTeams = ['accrington-stanley', 'everton', 'huddersfield', 'swansea',
-                    'wigan-athletic'];
+var defaultTeams = ['accrington', 'everton', 'huddersfield', 'swansea', 'wigan'];
 
 var allSeasons, allTeams, allTiers, allTierSizes;
 
