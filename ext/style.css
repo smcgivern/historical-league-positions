@@ -7,7 +7,7 @@ body {
     display: none;
     line-height: normal;
     float: left;
-    width: 13em;
+    width: 16em;
 }
 
 .year {
@@ -57,4 +57,8 @@ body {
 
 #teams-unselected .key {
     color: transparent !important;
+}
+
+#teams-unselected .average-position {
+    display: none;
 }

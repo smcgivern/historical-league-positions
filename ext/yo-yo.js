@@ -15,6 +15,29 @@ function element(name, content, attributes) {
     return e;
 }
 
+function averagePositions(teams) {
+    var min = parseInt($('#min-year').val()),
+        max = parseInt($('#max-year').val()),
+        out = {};
+
+    $.each(teams, function(i, team) {
+        var total = 0, count = 0;
+
+        $.each(team.seasons, function(j, season) {
+            var s = toSeason(season);
+
+            if (s >= min && s <= max && season.effectivePosition) {
+                total += season.effectivePosition;
+                count += 1;
+            }
+        });
+
+        out[team.team] = (total / count).toString().replace(/\.(\d{2})\d*/, '.$1');
+    });
+
+    return out;
+}
+
 function createTeamSelector(teams) {
     var teamList = $('#teams-unselected');
     var teamIDs = d3.keys(teams).sort();
@@ -47,9 +70,12 @@ function createTeamSelector(teams) {
         // A filled box for the chart key / legend.
         var key = element('span', '&#9632;', {'class': 'key'});
 
+        // An empty element for the average position.
+        var averagePosition = element('span', '', {'class': 'average-position'});
+
         input.change(function() { moveTeam($(this).parent()); redrawChart(); });
 
-        teamList.append(element('li').append(key).append(input).append(label));
+        teamList.append(element('li').append(key).append(input).append(label).append(averagePosition));
     }
 
     $('#options').show();
@@ -119,7 +145,7 @@ function toSeason(o) { return parseInt(o.season) + 1; }
 
 function chart() {
     var my = {},
-        width = 700,
+        width = 650,
         height = width / 2,
         padding = 20;
 
@@ -230,7 +256,8 @@ function chart() {
             var color = d3.scale.category10(),
                 lines = d3.select(this).select('#chart-body')
                     .selectAll('.line')
-                    .data(chartSeasons, function (d) { return d.team; });
+                    .data(chartSeasons, function (d) { return d.team; }),
+                averagePosition = averagePositions(chartSeasons);
 
             lines.exit().remove();
 
@@ -247,8 +274,11 @@ function chart() {
 
             // Colour in the legend items with the line colours.
             $.each(chartTeams, function(i, team) {
-                $('.key', $('#' + teamID(team)).parent())
-                    .css('color', color(team));
+                var parent = $('#' + teamID(team)).parent();
+
+                $('.key', parent).css('color', color(team));
+
+                $('.average-position', parent).text(' (' + averagePosition[team] + ')');
             });
         });
     };
