@@ -121,6 +121,7 @@ aberdare-athletic,2016-17,,,
 aberdare-athletic,2017-18,,,
 aberdare-athletic,2018-19,,,
 aberdare-athletic,2019-20,,,
+aberdare-athletic,2020-21,,,
 accrington,1888-89,1,7,7
 accrington,1889-90,1,6,6
 accrington,1890-91,1,10,10
@@ -243,6 +244,7 @@ accrington,2016-17,4,13,81
 accrington,2017-18,4,1,69
 accrington,2018-19,3,14,58
 accrington,2019-20,3,17,61
+accrington,2020-21,3,11,55
 afc-wimbledon,1888-89,,,
 afc-wimbledon,1889-90,,,
 afc-wimbledon,1890-91,,,
@@ -365,6 +367,7 @@ afc-wimbledon,2016-17,3,15,59
 afc-wimbledon,2017-18,3,18,62
 afc-wimbledon,2018-19,,,
 afc-wimbledon,2019-20,3,20,64
+afc-wimbledon,2020-21,3,19,63
 aldershot,1888-89,,,
 aldershot,1889-90,,,
 aldershot,1890-91,,,
@@ -487,6 +490,7 @@ aldershot,2016-17,,,
 aldershot,2017-18,,,
 aldershot,2018-19,,,
 aldershot,2019-20,,,
+aldershot,2020-21,,,
 arsenal,1888-89,,,
 arsenal,1889-90,,,
 arsenal,1890-91,,,
@@ -609,6 +613,7 @@ arsenal,2016-17,1,5,5
 arsenal,2017-18,1,6,6
 arsenal,2018-19,1,5,5
 arsenal,2019-20,1,8,8
+arsenal,2020-21,1,8,8
 ashington,1888-89,,,
 ashington,1889-90,,,
 ashington,1890-91,,,
@@ -731,6 +736,7 @@ ashington,2016-17,,,
 ashington,2017-18,,,
 ashington,2018-19,,,
 ashington,2019-20,,,
+ashington,2020-21,,,
 aston-villa,1888-89,1,2,2
 aston-villa,1889-90,1,8,8
 aston-villa,1890-91,1,9,9
@@ -853,6 +859,7 @@ aston-villa,2016-17,2,13,33
 aston-villa,2017-18,2,4,24
 aston-villa,2018-19,2,5,25
 aston-villa,2019-20,1,17,17
+aston-villa,2020-21,1,11,11
 barnet,1888-89,,,
 barnet,1889-90,,,
 barnet,1890-91,,,
@@ -975,6 +982,7 @@ barnet,2016-17,4,15,83
 barnet,2017-18,4,23,91
 barnet,2018-19,,,
 barnet,2019-20,,,
+barnet,2020-21,,,
 barnsley,1888-89,,,
 barnsley,1889-90,,,
 barnsley,1890-91,,,
@@ -1097,6 +1105,7 @@ barnsley,2016-17,2,14,34
 barnsley,2017-18,2,22,42
 barnsley,2018-19,3,2,46
 barnsley,2019-20,2,21,41
+barnsley,2020-21,2,5,25
 barrow,1888-89,,,
 barrow,1889-90,,,
 barrow,1890-91,,,
@@ -1219,6 +1228,7 @@ barrow,2016-17,,,
 barrow,2017-18,,,
 barrow,2018-19,,,
 barrow,2019-20,,,
+barrow,2020-21,4,21,89
 birmingham,1888-89,,,
 birmingham,1889-90,,,
 birmingham,1890-91,,,
@@ -1341,6 +1351,7 @@ birmingham,2016-17,2,19,39
 birmingham,2017-18,2,19,39
 birmingham,2018-19,2,17,37
 birmingham,2019-20,2,20,40
+birmingham,2020-21,2,18,38
 blackburn,1888-89,1,4,4
 blackburn,1889-90,1,3,3
 blackburn,1890-91,1,6,6
@@ -1463,6 +1474,7 @@ blackburn,2016-17,2,22,42
 blackburn,2017-18,3,2,46
 blackburn,2018-19,2,15,35
 blackburn,2019-20,2,11,31
+blackburn,2020-21,2,15,35
 blackpool,1888-89,,,
 blackpool,1889-90,,,
 blackpool,1890-91,,,
@@ -1585,6 +1597,7 @@ blackpool,2016-17,4,7,75
 blackpool,2017-18,3,12,56
 blackpool,2018-19,3,10,54
 blackpool,2019-20,3,13,57
+blackpool,2020-21,3,3,47
 bolton,1888-89,1,5,5
 bolton,1889-90,1,9,9
 bolton,1890-91,1,5,5
@@ -1707,6 +1720,7 @@ bolton,2016-17,3,2,46
 bolton,2017-18,2,21,41
 bolton,2018-19,2,23,43
 bolton,2019-20,3,23,67
+bolton,2020-21,4,3,71
 bootle,1888-89,,,
 bootle,1889-90,,,
 bootle,1890-91,,,
@@ -1829,6 +1843,7 @@ bootle,2016-17,,,
 bootle,2017-18,,,
 bootle,2018-19,,,
 bootle,2019-20,,,
+bootle,2020-21,,,
 boston,1888-89,,,
 boston,1889-90,,,
 boston,1890-91,,,
@@ -1951,6 +1966,7 @@ boston,2016-17,,,
 boston,2017-18,,,
 boston,2018-19,,,
 boston,2019-20,,,
+boston,2020-21,,,
 bournemouth,1888-89,,,
 bournemouth,1889-90,,,
 bournemouth,1890-91,,,
@@ -2073,6 +2089,7 @@ bournemouth,2016-17,1,9,9
 bournemouth,2017-18,1,12,12
 bournemouth,2018-19,1,14,14
 bournemouth,2019-20,1,18,18
+bournemouth,2020-21,2,6,26
 bradford,1888-89,,,
 bradford,1889-90,,,
 bradford,1890-91,,,
@@ -2195,6 +2212,7 @@ bradford,2016-17,3,5,49
 bradford,2017-18,3,11,55
 bradford,2018-19,3,24,68
 bradford,2019-20,4,9,76
+bradford,2020-21,4,15,83
 bradford-park-avenue,1888-89,,,
 bradford-park-avenue,1889-90,,,
 bradford-park-avenue,1890-91,,,
@@ -2317,6 +2335,7 @@ bradford-park-avenue,2016-17,,,
 bradford-park-avenue,2017-18,,,
 bradford-park-avenue,2018-19,,,
 bradford-park-avenue,2019-20,,,
+bradford-park-avenue,2020-21,,,
 brentford,1888-89,,,
 brentford,1889-90,,,
 brentford,1890-91,,,
@@ -2439,6 +2458,7 @@ brentford,2016-17,2,10,30
 brentford,2017-18,2,9,29
 brentford,2018-19,2,11,31
 brentford,2019-20,2,3,23
+brentford,2020-21,2,3,23
 brighton,1888-89,,,
 brighton,1889-90,,,
 brighton,1890-91,,,
@@ -2561,6 +2581,7 @@ brighton,2016-17,2,2,22
 brighton,2017-18,1,15,15
 brighton,2018-19,1,17,17
 brighton,2019-20,1,15,15
+brighton,2020-21,1,16,16
 bristol-city,1888-89,,,
 bristol-city,1889-90,,,
 bristol-city,1890-91,,,
@@ -2683,6 +2704,7 @@ bristol-city,2016-17,2,17,37
 bristol-city,2017-18,2,11,31
 bristol-city,2018-19,2,8,28
 bristol-city,2019-20,2,12,32
+bristol-city,2020-21,2,19,39
 bristol-rovers,1888-89,,,
 bristol-rovers,1889-90,,,
 bristol-rovers,1890-91,,,
@@ -2805,6 +2827,7 @@ bristol-rovers,2016-17,3,10,54
 bristol-rovers,2017-18,3,13,57
 bristol-rovers,2018-19,3,15,59
 bristol-rovers,2019-20,3,14,58
+bristol-rovers,2020-21,3,24,68
 burnley,1888-89,1,9,9
 burnley,1889-90,1,11,11
 burnley,1890-91,1,8,8
@@ -2927,6 +2950,7 @@ burnley,2016-17,1,16,16
 burnley,2017-18,1,7,7
 burnley,2018-19,1,15,15
 burnley,2019-20,1,10,10
+burnley,2020-21,1,17,17
 burton-albion,1888-89,,,
 burton-albion,1889-90,,,
 burton-albion,1890-91,,,
@@ -3049,6 +3073,7 @@ burton-albion,2016-17,2,20,40
 burton-albion,2017-18,2,23,43
 burton-albion,2018-19,3,9,53
 burton-albion,2019-20,3,12,56
+burton-albion,2020-21,3,16,60
 burton-united,1888-89,,,
 burton-united,1889-90,,,
 burton-united,1890-91,,,
@@ -3171,6 +3196,7 @@ burton-united,2016-17,,,
 burton-united,2017-18,,,
 burton-united,2018-19,,,
 burton-united,2019-20,,,
+burton-united,2020-21,,,
 burton-wanderers,1888-89,,,
 burton-wanderers,1889-90,,,
 burton-wanderers,1890-91,,,
@@ -3293,6 +3319,7 @@ burton-wanderers,2016-17,,,
 burton-wanderers,2017-18,,,
 burton-wanderers,2018-19,,,
 burton-wanderers,2019-20,,,
+burton-wanderers,2020-21,,,
 bury,1888-89,,,
 bury,1889-90,,,
 bury,1890-91,,,
@@ -3415,6 +3442,7 @@ bury,2016-17,3,19,63
 bury,2017-18,3,24,68
 bury,2018-19,4,2,70
 bury,2019-20,,,
+bury,2020-21,,,
 cambridge,1888-89,,,
 cambridge,1889-90,,,
 cambridge,1890-91,,,
@@ -3537,6 +3565,7 @@ cambridge,2016-17,4,11,79
 cambridge,2017-18,4,12,80
 cambridge,2018-19,4,21,89
 cambridge,2019-20,4,16,83
+cambridge,2020-21,4,2,70
 cardiff,1888-89,,,
 cardiff,1889-90,,,
 cardiff,1890-91,,,
@@ -3659,6 +3688,7 @@ cardiff,2016-17,2,12,32
 cardiff,2017-18,2,2,22
 cardiff,2018-19,1,18,18
 cardiff,2019-20,2,5,25
+cardiff,2020-21,2,8,28
 carlisle,1888-89,,,
 carlisle,1889-90,,,
 carlisle,1890-91,,,
@@ -3781,6 +3811,7 @@ carlisle,2016-17,4,6,74
 carlisle,2017-18,4,10,78
 carlisle,2018-19,4,11,79
 carlisle,2019-20,4,18,85
+carlisle,2020-21,4,10,78
 charlton,1888-89,,,
 charlton,1889-90,,,
 charlton,1890-91,,,
@@ -3903,6 +3934,7 @@ charlton,2016-17,3,13,57
 charlton,2017-18,3,6,50
 charlton,2018-19,3,3,47
 charlton,2019-20,2,22,42
+charlton,2020-21,3,7,51
 chelsea,1888-89,,,
 chelsea,1889-90,,,
 chelsea,1890-91,,,
@@ -4025,6 +4057,7 @@ chelsea,2016-17,1,1,1
 chelsea,2017-18,1,5,5
 chelsea,2018-19,1,3,3
 chelsea,2019-20,1,4,4
+chelsea,2020-21,1,4,4
 cheltenham,1888-89,,,
 cheltenham,1889-90,,,
 cheltenham,1890-91,,,
@@ -4147,6 +4180,7 @@ cheltenham,2016-17,4,21,89
 cheltenham,2017-18,4,17,85
 cheltenham,2018-19,4,16,84
 cheltenham,2019-20,4,4,71
+cheltenham,2020-21,4,1,69
 chester,1888-89,,,
 chester,1889-90,,,
 chester,1890-91,,,
@@ -4269,6 +4303,7 @@ chester,2016-17,,,
 chester,2017-18,,,
 chester,2018-19,,,
 chester,2019-20,,,
+chester,2020-21,,,
 chesterfield,1888-89,,,
 chesterfield,1889-90,,,
 chesterfield,1890-91,,,
@@ -4391,6 +4426,7 @@ chesterfield,2016-17,3,24,68
 chesterfield,2017-18,4,24,92
 chesterfield,2018-19,,,
 chesterfield,2019-20,,,
+chesterfield,2020-21,,,
 colchester,1888-89,,,
 colchester,1889-90,,,
 colchester,1890-91,,,
@@ -4513,6 +4549,7 @@ colchester,2016-17,4,8,76
 colchester,2017-18,4,13,81
 colchester,2018-19,4,8,76
 colchester,2019-20,4,6,73
+colchester,2020-21,4,20,88
 coventry,1888-89,,,
 coventry,1889-90,,,
 coventry,1890-91,,,
@@ -4635,6 +4672,7 @@ coventry,2016-17,3,23,67
 coventry,2017-18,4,6,74
 coventry,2018-19,3,8,52
 coventry,2019-20,3,1,45
+coventry,2020-21,2,16,36
 crawley,1888-89,,,
 crawley,1889-90,,,
 crawley,1890-91,,,
@@ -4757,6 +4795,7 @@ crawley,2016-17,4,19,87
 crawley,2017-18,4,14,82
 crawley,2018-19,4,19,87
 crawley,2019-20,4,13,80
+crawley,2020-21,4,12,80
 crewe,1888-89,,,
 crewe,1889-90,,,
 crewe,1890-91,,,
@@ -4879,6 +4918,7 @@ crewe,2016-17,4,17,85
 crewe,2017-18,4,15,83
 crewe,2018-19,4,12,80
 crewe,2019-20,4,2,69
+crewe,2020-21,3,12,56
 crystal-palace,1888-89,,,
 crystal-palace,1889-90,,,
 crystal-palace,1890-91,,,
@@ -5001,6 +5041,7 @@ crystal-palace,2016-17,1,14,14
 crystal-palace,2017-18,1,11,11
 crystal-palace,2018-19,1,12,12
 crystal-palace,2019-20,1,14,14
+crystal-palace,2020-21,1,14,14
 dagenham-and-redbridge,1888-89,,,
 dagenham-and-redbridge,1889-90,,,
 dagenham-and-redbridge,1890-91,,,
@@ -5123,6 +5164,7 @@ dagenham-and-redbridge,2016-17,,,
 dagenham-and-redbridge,2017-18,,,
 dagenham-and-redbridge,2018-19,,,
 dagenham-and-redbridge,2019-20,,,
+dagenham-and-redbridge,2020-21,,,
 darlington,1888-89,,,
 darlington,1889-90,,,
 darlington,1890-91,,,
@@ -5245,6 +5287,7 @@ darlington,2016-17,,,
 darlington,2017-18,,,
 darlington,2018-19,,,
 darlington,2019-20,,,
+darlington,2020-21,,,
 darwen,1888-89,,,
 darwen,1889-90,,,
 darwen,1890-91,,,
@@ -5367,6 +5410,7 @@ darwen,2016-17,,,
 darwen,2017-18,,,
 darwen,2018-19,,,
 darwen,2019-20,,,
+darwen,2020-21,,,
 derby,1888-89,1,10,10
 derby,1889-90,1,7,7
 derby,1890-91,1,11,11
@@ -5489,6 +5533,7 @@ derby,2016-17,2,9,29
 derby,2017-18,2,6,26
 derby,2018-19,2,6,26
 derby,2019-20,2,10,30
+derby,2020-21,2,21,41
 doncaster,1888-89,,,
 doncaster,1889-90,,,
 doncaster,1890-91,,,
@@ -5611,6 +5656,7 @@ doncaster,2016-17,4,3,71
 doncaster,2017-18,3,15,59
 doncaster,2018-19,3,6,50
 doncaster,2019-20,3,9,53
+doncaster,2020-21,3,14,58
 durham,1888-89,,,
 durham,1889-90,,,
 durham,1890-91,,,
@@ -5733,6 +5779,7 @@ durham,2016-17,,,
 durham,2017-18,,,
 durham,2018-19,,,
 durham,2019-20,,,
+durham,2020-21,,,
 everton,1888-89,1,8,8
 everton,1889-90,1,2,2
 everton,1890-91,1,1,1
@@ -5855,6 +5902,7 @@ everton,2016-17,1,7,7
 everton,2017-18,1,8,8
 everton,2018-19,1,8,8
 everton,2019-20,1,12,12
+everton,2020-21,1,10,10
 exeter,1888-89,,,
 exeter,1889-90,,,
 exeter,1890-91,,,
@@ -5977,6 +6025,7 @@ exeter,2016-17,4,5,73
 exeter,2017-18,4,4,72
 exeter,2018-19,4,9,77
 exeter,2019-20,4,5,72
+exeter,2020-21,4,9,77
 fleetwood,1888-89,,,
 fleetwood,1889-90,,,
 fleetwood,1890-91,,,
@@ -6099,6 +6148,7 @@ fleetwood,2016-17,3,4,48
 fleetwood,2017-18,3,14,58
 fleetwood,2018-19,3,11,55
 fleetwood,2019-20,3,6,50
+fleetwood,2020-21,3,15,59
 forest-green,1888-89,,,
 forest-green,1889-90,,,
 forest-green,1890-91,,,
@@ -6221,6 +6271,7 @@ forest-green,2016-17,,,
 forest-green,2017-18,4,21,89
 forest-green,2018-19,4,5,73
 forest-green,2019-20,4,10,77
+forest-green,2020-21,4,6,74
 fulham,1888-89,,,
 fulham,1889-90,,,
 fulham,1890-91,,,
@@ -6343,6 +6394,7 @@ fulham,2016-17,2,6,26
 fulham,2017-18,2,3,23
 fulham,2018-19,1,19,19
 fulham,2019-20,2,4,24
+fulham,2020-21,1,18,18
 gainsborough,1888-89,,,
 gainsborough,1889-90,,,
 gainsborough,1890-91,,,
@@ -6465,6 +6517,7 @@ gainsborough,2016-17,,,
 gainsborough,2017-18,,,
 gainsborough,2018-19,,,
 gainsborough,2019-20,,,
+gainsborough,2020-21,,,
 gateshead,1888-89,,,
 gateshead,1889-90,,,
 gateshead,1890-91,,,
@@ -6587,6 +6640,7 @@ gateshead,2016-17,,,
 gateshead,2017-18,,,
 gateshead,2018-19,,,
 gateshead,2019-20,,,
+gateshead,2020-21,,,
 gillingham,1888-89,,,
 gillingham,1889-90,,,
 gillingham,1890-91,,,
@@ -6709,6 +6763,7 @@ gillingham,2016-17,3,20,64
 gillingham,2017-18,3,17,61
 gillingham,2018-19,3,13,57
 gillingham,2019-20,3,10,54
+gillingham,2020-21,3,10,54
 glossop,1888-89,,,
 glossop,1889-90,,,
 glossop,1890-91,,,
@@ -6831,6 +6886,7 @@ glossop,2016-17,,,
 glossop,2017-18,,,
 glossop,2018-19,,,
 glossop,2019-20,,,
+glossop,2020-21,,,
 grimsby,1888-89,,,
 grimsby,1889-90,,,
 grimsby,1890-91,,,
@@ -6953,6 +7009,7 @@ grimsby,2016-17,4,14,82
 grimsby,2017-18,4,18,86
 grimsby,2018-19,4,17,85
 grimsby,2019-20,4,15,82
+grimsby,2020-21,4,24,92
 halifax,1888-89,,,
 halifax,1889-90,,,
 halifax,1890-91,,,
@@ -7075,6 +7132,130 @@ halifax,2016-17,,,
 halifax,2017-18,,,
 halifax,2018-19,,,
 halifax,2019-20,,,
+halifax,2020-21,,,
+harrogate,1888-89,,,
+harrogate,1889-90,,,
+harrogate,1890-91,,,
+harrogate,1891-92,,,
+harrogate,1892-93,,,
+harrogate,1893-94,,,
+harrogate,1894-95,,,
+harrogate,1895-96,,,
+harrogate,1896-97,,,
+harrogate,1897-98,,,
+harrogate,1898-99,,,
+harrogate,1899-00,,,
+harrogate,1900-01,,,
+harrogate,1901-02,,,
+harrogate,1902-03,,,
+harrogate,1903-04,,,
+harrogate,1904-05,,,
+harrogate,1905-06,,,
+harrogate,1906-07,,,
+harrogate,1907-08,,,
+harrogate,1908-09,,,
+harrogate,1909-10,,,
+harrogate,1910-11,,,
+harrogate,1911-12,,,
+harrogate,1912-13,,,
+harrogate,1913-14,,,
+harrogate,1914-15,,,
+harrogate,1919-20,,,
+harrogate,1920-21,,,
+harrogate,1921-22,,,
+harrogate,1922-23,,,
+harrogate,1923-24,,,
+harrogate,1924-25,,,
+harrogate,1925-26,,,
+harrogate,1926-27,,,
+harrogate,1927-28,,,
+harrogate,1928-29,,,
+harrogate,1929-30,,,
+harrogate,1930-31,,,
+harrogate,1931-32,,,
+harrogate,1932-33,,,
+harrogate,1933-34,,,
+harrogate,1934-35,,,
+harrogate,1935-36,,,
+harrogate,1936-37,,,
+harrogate,1937-38,,,
+harrogate,1938-39,,,
+harrogate,1939-40,,,
+harrogate,1946-47,,,
+harrogate,1947-48,,,
+harrogate,1948-49,,,
+harrogate,1949-50,,,
+harrogate,1950-51,,,
+harrogate,1951-52,,,
+harrogate,1952-53,,,
+harrogate,1953-54,,,
+harrogate,1954-55,,,
+harrogate,1955-56,,,
+harrogate,1956-57,,,
+harrogate,1957-58,,,
+harrogate,1958-59,,,
+harrogate,1959-60,,,
+harrogate,1960-61,,,
+harrogate,1961-62,,,
+harrogate,1962-63,,,
+harrogate,1963-64,,,
+harrogate,1964-65,,,
+harrogate,1965-66,,,
+harrogate,1966-67,,,
+harrogate,1967-68,,,
+harrogate,1968-69,,,
+harrogate,1969-70,,,
+harrogate,1970-71,,,
+harrogate,1971-72,,,
+harrogate,1972-73,,,
+harrogate,1973-74,,,
+harrogate,1974-75,,,
+harrogate,1975-76,,,
+harrogate,1976-77,,,
+harrogate,1977-78,,,
+harrogate,1978-79,,,
+harrogate,1979-80,,,
+harrogate,1980-81,,,
+harrogate,1981-82,,,
+harrogate,1982-83,,,
+harrogate,1983-84,,,
+harrogate,1984-85,,,
+harrogate,1985-86,,,
+harrogate,1986-87,,,
+harrogate,1987-88,,,
+harrogate,1988-89,,,
+harrogate,1989-90,,,
+harrogate,1990-91,,,
+harrogate,1991-92,,,
+harrogate,1992-93,,,
+harrogate,1993-94,,,
+harrogate,1994-95,,,
+harrogate,1995-96,,,
+harrogate,1996-97,,,
+harrogate,1997-98,,,
+harrogate,1998-99,,,
+harrogate,1999-00,,,
+harrogate,2000-01,,,
+harrogate,2001-02,,,
+harrogate,2002-03,,,
+harrogate,2003-04,,,
+harrogate,2004-05,,,
+harrogate,2005-06,,,
+harrogate,2006-07,,,
+harrogate,2007-08,,,
+harrogate,2008-09,,,
+harrogate,2009-10,,,
+harrogate,2010-11,,,
+harrogate,2011-12,,,
+harrogate,2012-13,,,
+harrogate,2013-14,,,
+harrogate,2014-15,,,
+harrogate,2015-16,,,
+harrogate,2016-17,,,
+harrogate,2017-18,,,
+harrogate,2018-19,,,
+harrogate,2019-20,,,
+harrogate,2020-21,4,17,85
 hartlepool,1888-89,,,
 hartlepool,1889-90,,,
 hartlepool,1890-91,,,
@@ -7197,6 +7378,7 @@ hartlepool,2016-17,4,23,91
 hartlepool,2017-18,,,
 hartlepool,2018-19,,,
 hartlepool,2019-20,,,
+hartlepool,2020-21,,,
 hereford,1888-89,,,
 hereford,1889-90,,,
 hereford,1890-91,,,
@@ -7319,6 +7501,7 @@ hereford,2016-17,,,
 hereford,2017-18,,,
 hereford,2018-19,,,
 hereford,2019-20,,,
+hereford,2020-21,,,
 huddersfield,1888-89,,,
 huddersfield,1889-90,,,
 huddersfield,1890-91,,,
@@ -7441,6 +7624,7 @@ huddersfield,2016-17,2,5,25
 huddersfield,2017-18,1,16,16
 huddersfield,2018-19,1,20,20
 huddersfield,2019-20,2,18,38
+huddersfield,2020-21,2,20,40
 hull,1888-89,,,
 hull,1889-90,,,
 hull,1890-91,,,
@@ -7563,6 +7747,7 @@ hull,2016-17,1,18,18
 hull,2017-18,2,18,38
 hull,2018-19,2,13,33
 hull,2019-20,2,24,44
+hull,2020-21,3,1,45
 ipswich,1888-89,,,
 ipswich,1889-90,,,
 ipswich,1890-91,,,
@@ -7685,6 +7870,7 @@ ipswich,2016-17,2,16,36
 ipswich,2017-18,2,12,32
 ipswich,2018-19,2,24,44
 ipswich,2019-20,3,11,55
+ipswich,2020-21,3,9,53
 kidderminster,1888-89,,,
 kidderminster,1889-90,,,
 kidderminster,1890-91,,,
@@ -7807,6 +7993,7 @@ kidderminster,2016-17,,,
 kidderminster,2017-18,,,
 kidderminster,2018-19,,,
 kidderminster,2019-20,,,
+kidderminster,2020-21,,,
 leeds,1888-89,,,
 leeds,1889-90,,,
 leeds,1890-91,,,
@@ -7929,6 +8116,7 @@ leeds,2016-17,,,
 leeds,2017-18,,,
 leeds,2018-19,2,3,23
 leeds,2019-20,,,
+leeds,2020-21,,,
 leeds-city,1888-89,,,
 leeds-city,1889-90,,,
 leeds-city,1890-91,,,
@@ -8051,6 +8239,7 @@ leeds-city,2016-17,,,
 leeds-city,2017-18,,,
 leeds-city,2018-19,,,
 leeds-city,2019-20,,,
+leeds-city,2020-21,,,
 leeds-united,1888-89,,,
 leeds-united,1889-90,,,
 leeds-united,1890-91,,,
@@ -8173,6 +8362,7 @@ leeds-united,2016-17,2,7,27
 leeds-united,2017-18,2,13,33
 leeds-united,2018-19,,,
 leeds-united,2019-20,2,1,21
+leeds-united,2020-21,1,9,9
 leicester,1888-89,,,
 leicester,1889-90,,,
 leicester,1890-91,,,
@@ -8295,6 +8485,7 @@ leicester,2016-17,1,12,12
 leicester,2017-18,1,9,9
 leicester,2018-19,1,9,9
 leicester,2019-20,1,5,5
+leicester,2020-21,1,5,5
 leyton-orient,1888-89,,,
 leyton-orient,1889-90,,,
 leyton-orient,1890-91,,,
@@ -8417,6 +8608,7 @@ leyton-orient,2016-17,4,24,92
 leyton-orient,2017-18,,,
 leyton-orient,2018-19,,,
 leyton-orient,2019-20,4,17,84
+leyton-orient,2020-21,4,11,79
 lincoln,1888-89,,,
 lincoln,1889-90,,,
 lincoln,1890-91,,,
@@ -8539,6 +8731,7 @@ lincoln,2016-17,,,
 lincoln,2017-18,4,7,75
 lincoln,2018-19,4,1,69
 lincoln,2019-20,3,16,60
+lincoln,2020-21,3,5,49
 liverpool,1888-89,,,
 liverpool,1889-90,,,
 liverpool,1890-91,,,
@@ -8661,6 +8854,7 @@ liverpool,2016-17,1,4,4
 liverpool,2017-18,1,4,4
 liverpool,2018-19,1,2,2
 liverpool,2019-20,1,1,1
+liverpool,2020-21,1,3,3
 loughborough,1888-89,,,
 loughborough,1889-90,,,
 loughborough,1890-91,,,
@@ -8783,6 +8977,7 @@ loughborough,2016-17,,,
 loughborough,2017-18,,,
 loughborough,2018-19,,,
 loughborough,2019-20,,,
+loughborough,2020-21,,,
 luton,1888-89,,,
 luton,1889-90,,,
 luton,1890-91,,,
@@ -8905,6 +9100,7 @@ luton,2016-17,4,4,72
 luton,2017-18,4,2,70
 luton,2018-19,3,1,45
 luton,2019-20,2,19,39
+luton,2020-21,2,12,32
 macclesfield,1888-89,,,
 macclesfield,1889-90,,,
 macclesfield,1890-91,,,
@@ -9027,6 +9223,7 @@ macclesfield,2016-17,,,
 macclesfield,2017-18,,,
 macclesfield,2018-19,4,22,90
 macclesfield,2019-20,4,23,90
+macclesfield,2020-21,,,
 maidstone,1888-89,,,
 maidstone,1889-90,,,
 maidstone,1890-91,,,
@@ -9149,6 +9346,7 @@ maidstone,2016-17,,,
 maidstone,2017-18,,,
 maidstone,2018-19,,,
 maidstone,2019-20,,,
+maidstone,2020-21,,,
 man-city,1888-89,,,
 man-city,1889-90,,,
 man-city,1890-91,,,
@@ -9271,6 +9469,7 @@ man-city,2016-17,1,3,3
 man-city,2017-18,1,1,1
 man-city,2018-19,1,1,1
 man-city,2019-20,1,2,2
+man-city,2020-21,1,1,1
 man-utd,1888-89,,,
 man-utd,1889-90,,,
 man-utd,1890-91,,,
@@ -9393,6 +9592,7 @@ man-utd,2016-17,1,6,6
 man-utd,2017-18,1,2,2
 man-utd,2018-19,1,6,6
 man-utd,2019-20,1,3,3
+man-utd,2020-21,1,2,2
 mansfield,1888-89,,,
 mansfield,1889-90,,,
 mansfield,1890-91,,,
@@ -9515,6 +9715,7 @@ mansfield,2016-17,4,12,80
 mansfield,2017-18,4,8,76
 mansfield,2018-19,4,4,72
 mansfield,2019-20,4,21,88
+mansfield,2020-21,4,16,84
 merthyr,1888-89,,,
 merthyr,1889-90,,,
 merthyr,1890-91,,,
@@ -9637,6 +9838,7 @@ merthyr,2016-17,,,
 merthyr,2017-18,,,
 merthyr,2018-19,,,
 merthyr,2019-20,,,
+merthyr,2020-21,,,
 middlesbrough,1888-89,,,
 middlesbrough,1889-90,,,
 middlesbrough,1890-91,,,
@@ -9759,6 +9961,7 @@ middlesbrough,2016-17,1,19,19
 middlesbrough,2017-18,2,5,25
 middlesbrough,2018-19,2,7,27
 middlesbrough,2019-20,2,17,37
+middlesbrough,2020-21,2,10,30
 middlesbrough-ironopolis,1888-89,,,
 middlesbrough-ironopolis,1889-90,,,
 middlesbrough-ironopolis,1890-91,,,
@@ -9881,6 +10084,7 @@ middlesbrough-ironopolis,2016-17,,,
 middlesbrough-ironopolis,2017-18,,,
 middlesbrough-ironopolis,2018-19,,,
 middlesbrough-ironopolis,2019-20,,,
+middlesbrough-ironopolis,2020-21,,,
 millwall,1888-89,,,
 millwall,1889-90,,,
 millwall,1890-91,,,
@@ -10003,6 +10207,7 @@ millwall,2016-17,3,6,50
 millwall,2017-18,2,8,28
 millwall,2018-19,2,21,41
 millwall,2019-20,2,8,28
+millwall,2020-21,2,11,31
 mk-dons,1888-89,,,
 mk-dons,1889-90,,,
 mk-dons,1890-91,,,
@@ -10125,6 +10330,7 @@ mk-dons,2016-17,3,12,56
 mk-dons,2017-18,3,23,67
 mk-dons,2018-19,4,3,71
 mk-dons,2019-20,3,19,63
+mk-dons,2020-21,3,13,57
 morecambe,1888-89,,,
 morecambe,1889-90,,,
 morecambe,1890-91,,,
@@ -10247,6 +10453,7 @@ morecambe,2016-17,4,18,86
 morecambe,2017-18,4,22,90
 morecambe,2018-19,4,18,86
 morecambe,2019-20,4,22,89
+morecambe,2020-21,4,4,72
 nelson,1888-89,,,
 nelson,1889-90,,,
 nelson,1890-91,,,
@@ -10369,6 +10576,7 @@ nelson,2016-17,,,
 nelson,2017-18,,,
 nelson,2018-19,,,
 nelson,2019-20,,,
+nelson,2020-21,,,
 new-brighton,1888-89,,,
 new-brighton,1889-90,,,
 new-brighton,1890-91,,,
@@ -10491,6 +10699,7 @@ new-brighton,2016-17,,,
 new-brighton,2017-18,,,
 new-brighton,2018-19,,,
 new-brighton,2019-20,,,
+new-brighton,2020-21,,,
 newcastle,1888-89,,,
 newcastle,1889-90,,,
 newcastle,1890-91,,,
@@ -10613,6 +10822,7 @@ newcastle,2016-17,2,1,21
 newcastle,2017-18,1,10,10
 newcastle,2018-19,1,13,13
 newcastle,2019-20,1,13,13
+newcastle,2020-21,1,12,12
 newport,1888-89,,,
 newport,1889-90,,,
 newport,1890-91,,,
@@ -10735,6 +10945,7 @@ newport,2016-17,4,22,90
 newport,2017-18,4,11,79
 newport,2018-19,4,7,75
 newport,2019-20,4,14,81
+newport,2020-21,4,5,73
 northampton,1888-89,,,
 northampton,1889-90,,,
 northampton,1890-91,,,
@@ -10857,6 +11068,7 @@ northampton,2016-17,3,16,60
 northampton,2017-18,3,22,66
 northampton,2018-19,4,15,83
 northampton,2019-20,4,7,74
+northampton,2020-21,3,22,66
 northwich-victoria,1888-89,,,
 northwich-victoria,1889-90,,,
 northwich-victoria,1890-91,,,
@@ -10979,6 +11191,7 @@ northwich-victoria,2016-17,,,
 northwich-victoria,2017-18,,,
 northwich-victoria,2018-19,,,
 northwich-victoria,2019-20,,,
+northwich-victoria,2020-21,,,
 norwich,1888-89,,,
 norwich,1889-90,,,
 norwich,1890-91,,,
@@ -11101,6 +11314,7 @@ norwich,2016-17,2,8,28
 norwich,2017-18,2,14,34
 norwich,2018-19,2,1,21
 norwich,2019-20,1,20,20
+norwich,2020-21,2,1,21
 nottm-forest,1888-89,,,
 nottm-forest,1889-90,,,
 nottm-forest,1890-91,,,
@@ -11223,6 +11437,7 @@ nottm-forest,2016-17,2,21,41
 nottm-forest,2017-18,2,17,37
 nottm-forest,2018-19,2,9,29
 nottm-forest,2019-20,2,7,27
+nottm-forest,2020-21,2,17,37
 notts-county,1888-89,1,11,11
 notts-county,1889-90,1,10,10
 notts-county,1890-91,1,3,3
@@ -11345,6 +11560,7 @@ notts-county,2016-17,4,16,84
 notts-county,2017-18,4,5,73
 notts-county,2018-19,4,23,91
 notts-county,2019-20,,,
+notts-county,2020-21,,,
 oldham,1888-89,,,
 oldham,1889-90,,,
 oldham,1890-91,,,
@@ -11467,6 +11683,7 @@ oldham,2016-17,3,17,61
 oldham,2017-18,3,21,65
 oldham,2018-19,4,14,82
 oldham,2019-20,4,19,86
+oldham,2020-21,4,18,86
 oxford,1888-89,,,
 oxford,1889-90,,,
 oxford,1890-91,,,
@@ -11589,6 +11806,7 @@ oxford,2016-17,3,8,52
 oxford,2017-18,3,16,60
 oxford,2018-19,3,12,56
 oxford,2019-20,3,4,48
+oxford,2020-21,3,6,50
 peterborough,1888-89,,,
 peterborough,1889-90,,,
 peterborough,1890-91,,,
@@ -11711,6 +11929,7 @@ peterborough,2016-17,3,11,55
 peterborough,2017-18,3,9,53
 peterborough,2018-19,3,7,51
 peterborough,2019-20,3,7,51
+peterborough,2020-21,3,2,46
 plymouth,1888-89,,,
 plymouth,1889-90,,,
 plymouth,1890-91,,,
@@ -11833,6 +12052,7 @@ plymouth,2016-17,4,2,70
 plymouth,2017-18,3,7,51
 plymouth,2018-19,3,21,65
 plymouth,2019-20,4,3,70
+plymouth,2020-21,3,18,62
 port-value,1888-89,,,
 port-value,1889-90,,,
 port-value,1890-91,,,
@@ -11955,6 +12175,7 @@ port-value,2016-17,3,21,65
 port-value,2017-18,4,20,88
 port-value,2018-19,4,20,88
 port-value,2019-20,4,8,75
+port-value,2020-21,4,13,81
 portsmouth,1888-89,,,
 portsmouth,1889-90,,,
 portsmouth,1890-91,,,
@@ -12077,6 +12298,7 @@ portsmouth,2016-17,4,1,69
 portsmouth,2017-18,3,8,52
 portsmouth,2018-19,3,4,48
 portsmouth,2019-20,3,5,49
+portsmouth,2020-21,3,8,52
 preston,1888-89,1,1,1
 preston,1889-90,1,1,1
 preston,1890-91,1,2,2
@@ -12199,6 +12421,7 @@ preston,2016-17,2,11,31
 preston,2017-18,2,7,27
 preston,2018-19,2,14,34
 preston,2019-20,2,9,29
+preston,2020-21,2,13,33
 qpr,1888-89,,,
 qpr,1889-90,,,
 qpr,1890-91,,,
@@ -12321,6 +12544,7 @@ qpr,2016-17,2,18,38
 qpr,2017-18,2,16,36
 qpr,2018-19,2,19,39
 qpr,2019-20,2,13,33
+qpr,2020-21,2,9,29
 reading,1888-89,,,
 reading,1889-90,,,
 reading,1890-91,,,
@@ -12443,6 +12667,7 @@ reading,2016-17,2,3,23
 reading,2017-18,2,20,40
 reading,2018-19,2,20,40
 reading,2019-20,2,14,34
+reading,2020-21,2,7,27
 rochdale,1888-89,,,
 rochdale,1889-90,,,
 rochdale,1890-91,,,
@@ -12565,6 +12790,7 @@ rochdale,2016-17,3,9,53
 rochdale,2017-18,3,20,64
 rochdale,2018-19,3,16,60
 rochdale,2019-20,3,18,62
+rochdale,2020-21,3,21,65
 rotherham,1888-89,,,
 rotherham,1889-90,,,
 rotherham,1890-91,,,
@@ -12687,6 +12913,7 @@ rotherham,2016-17,,,
 rotherham,2017-18,,,
 rotherham,2018-19,2,22,42
 rotherham,2019-20,,,
+rotherham,2020-21,,,
 rotherham-united,1888-89,,,
 rotherham-united,1889-90,,,
 rotherham-united,1890-91,,,
@@ -12809,6 +13036,7 @@ rotherham-united,2016-17,2,24,44
 rotherham-united,2017-18,3,4,48
 rotherham-united,2018-19,,,
 rotherham-united,2019-20,3,2,46
+rotherham-united,2020-21,2,23,43
 rushen-and-diamonds,1888-89,,,
 rushen-and-diamonds,1889-90,,,
 rushen-and-diamonds,1890-91,,,
@@ -12931,6 +13159,7 @@ rushen-and-diamonds,2016-17,,,
 rushen-and-diamonds,2017-18,,,
 rushen-and-diamonds,2018-19,,,
 rushen-and-diamonds,2019-20,,,
+rushen-and-diamonds,2020-21,,,
 salford,1888-89,,,
 salford,1889-90,,,
 salford,1890-91,,,
@@ -13053,6 +13282,7 @@ salford,2016-17,,,
 salford,2017-18,,,
 salford,2018-19,,,
 salford,2019-20,4,11,78
+salford,2020-21,4,8,76
 scarborough,1888-89,,,
 scarborough,1889-90,,,
 scarborough,1890-91,,,
@@ -13175,6 +13405,7 @@ scarborough,2016-17,,,
 scarborough,2017-18,,,
 scarborough,2018-19,,,
 scarborough,2019-20,,,
+scarborough,2020-21,,,
 scunthorpe,1888-89,,,
 scunthorpe,1889-90,,,
 scunthorpe,1890-91,,,
@@ -13297,6 +13528,7 @@ scunthorpe,2016-17,,,
 scunthorpe,2017-18,,,
 scunthorpe,2018-19,3,23,67
 scunthorpe,2019-20,,,
+scunthorpe,2020-21,,,
 scunthorpe-utd,1888-89,,,
 scunthorpe-utd,1889-90,,,
 scunthorpe-utd,1890-91,,,
@@ -13419,6 +13651,7 @@ scunthorpe-utd,2016-17,3,3,47
 scunthorpe-utd,2017-18,3,5,49
 scunthorpe-utd,2018-19,,,
 scunthorpe-utd,2019-20,4,20,87
+scunthorpe-utd,2020-21,4,22,90
 sheff-utd,1888-89,,,
 sheff-utd,1889-90,,,
 sheff-utd,1890-91,,,
@@ -13541,6 +13774,7 @@ sheff-utd,2016-17,3,1,45
 sheff-utd,2017-18,2,10,30
 sheff-utd,2018-19,2,2,22
 sheff-utd,2019-20,1,9,9
+sheff-utd,2020-21,1,20,20
 sheff-wed,1888-89,,,
 sheff-wed,1889-90,,,
 sheff-wed,1890-91,,,
@@ -13663,6 +13897,7 @@ sheff-wed,2016-17,2,4,24
 sheff-wed,2017-18,2,15,35
 sheff-wed,2018-19,2,12,32
 sheff-wed,2019-20,2,16,36
+sheff-wed,2020-21,2,24,44
 shrewsbury,1888-89,,,
 shrewsbury,1889-90,,,
 shrewsbury,1890-91,,,
@@ -13785,6 +14020,7 @@ shrewsbury,2016-17,3,18,62
 shrewsbury,2017-18,3,3,47
 shrewsbury,2018-19,3,18,62
 shrewsbury,2019-20,3,15,59
+shrewsbury,2020-21,3,17,61
 south-shields,1888-89,,,
 south-shields,1889-90,,,
 south-shields,1890-91,,,
@@ -13907,6 +14143,7 @@ south-shields,2016-17,,,
 south-shields,2017-18,,,
 south-shields,2018-19,,,
 south-shields,2019-20,,,
+south-shields,2020-21,,,
 southampton,1888-89,,,
 southampton,1889-90,,,
 southampton,1890-91,,,
@@ -14029,6 +14266,7 @@ southampton,2016-17,1,8,8
 southampton,2017-18,1,17,17
 southampton,2018-19,1,16,16
 southampton,2019-20,1,11,11
+southampton,2020-21,1,15,15
 southend,1888-89,,,
 southend,1889-90,,,
 southend,1890-91,,,
@@ -14151,6 +14389,7 @@ southend,2016-17,3,7,51
 southend,2017-18,3,10,54
 southend,2018-19,3,19,63
 southend,2019-20,3,22,66
+southend,2020-21,4,23,91
 southport,1888-89,,,
 southport,1889-90,,,
 southport,1890-91,,,
@@ -14273,6 +14512,7 @@ southport,2016-17,,,
 southport,2017-18,,,
 southport,2018-19,,,
 southport,2019-20,,,
+southport,2020-21,,,
 spurs,1888-89,,,
 spurs,1889-90,,,
 spurs,1890-91,,,
@@ -14395,6 +14635,7 @@ spurs,2016-17,1,2,2
 spurs,2017-18,1,3,3
 spurs,2018-19,1,4,4
 spurs,2019-20,1,6,6
+spurs,2020-21,1,7,7
 stalybridge,1888-89,,,
 stalybridge,1889-90,,,
 stalybridge,1890-91,,,
@@ -14517,6 +14758,7 @@ stalybridge,2016-17,,,
 stalybridge,2017-18,,,
 stalybridge,2018-19,,,
 stalybridge,2019-20,,,
+stalybridge,2020-21,,,
 stevenave,1888-89,,,
 stevenave,1889-90,,,
 stevenave,1890-91,,,
@@ -14639,6 +14881,7 @@ stevenave,2016-17,4,10,78
 stevenave,2017-18,4,16,84
 stevenave,2018-19,4,10,78
 stevenave,2019-20,4,24,91
+stevenave,2020-21,4,14,82
 stockport,1888-89,,,
 stockport,1889-90,,,
 stockport,1890-91,,,
@@ -14761,6 +15004,7 @@ stockport,2016-17,,,
 stockport,2017-18,,,
 stockport,2018-19,,,
 stockport,2019-20,,,
+stockport,2020-21,,,
 stoke,1888-89,1,12,12
 stoke,1889-90,1,12,12
 stoke,1890-91,,,
@@ -14883,6 +15127,7 @@ stoke,2016-17,1,13,13
 stoke,2017-18,1,19,19
 stoke,2018-19,2,16,36
 stoke,2019-20,2,15,35
+stoke,2020-21,2,14,34
 sunderland,1888-89,,,
 sunderland,1889-90,,,
 sunderland,1890-91,1,7,7
@@ -15005,6 +15250,7 @@ sunderland,2016-17,1,20,20
 sunderland,2017-18,2,24,44
 sunderland,2018-19,3,5,49
 sunderland,2019-20,3,8,52
+sunderland,2020-21,3,4,48
 swansea,1888-89,,,
 swansea,1889-90,,,
 swansea,1890-91,,,
@@ -15127,6 +15373,7 @@ swansea,2016-17,1,15,15
 swansea,2017-18,1,18,18
 swansea,2018-19,2,10,30
 swansea,2019-20,2,6,26
+swansea,2020-21,2,4,24
 swindon,1888-89,,,
 swindon,1889-90,,,
 swindon,1890-91,,,
@@ -15249,6 +15496,7 @@ swindon,2016-17,3,22,66
 swindon,2017-18,4,9,77
 swindon,2018-19,4,13,81
 swindon,2019-20,4,1,68
+swindon,2020-21,3,23,67
 thames,1888-89,,,
 thames,1889-90,,,
 thames,1890-91,,,
@@ -15371,6 +15619,7 @@ thames,2016-17,,,
 thames,2017-18,,,
 thames,2018-19,,,
 thames,2019-20,,,
+thames,2020-21,,,
 torquay,1888-89,,,
 torquay,1889-90,,,
 torquay,1890-91,,,
@@ -15493,6 +15742,7 @@ torquay,2016-17,,,
 torquay,2017-18,,,
 torquay,2018-19,,,
 torquay,2019-20,,,
+torquay,2020-21,,,
 tranmere,1888-89,,,
 tranmere,1889-90,,,
 tranmere,1890-91,,,
@@ -15615,6 +15865,7 @@ tranmere,2016-17,,,
 tranmere,2017-18,,,
 tranmere,2018-19,4,6,74
 tranmere,2019-20,3,21,65
+tranmere,2020-21,4,7,75
 walsall,1888-89,,,
 walsall,1889-90,,,
 walsall,1890-91,,,
@@ -15737,6 +15988,7 @@ walsall,2016-17,3,14,58
 walsall,2017-18,3,19,63
 walsall,2018-19,3,22,66
 walsall,2019-20,4,12,79
+walsall,2020-21,4,19,87
 watford,1888-89,,,
 watford,1889-90,,,
 watford,1890-91,,,
@@ -15859,6 +16111,7 @@ watford,2016-17,1,17,17
 watford,2017-18,1,14,14
 watford,2018-19,1,11,11
 watford,2019-20,1,19,19
+watford,2020-21,2,2,22
 wba,1888-89,1,6,6
 wba,1889-90,1,5,5
 wba,1890-91,1,12,12
@@ -15981,6 +16234,7 @@ wba,2016-17,1,10,10
 wba,2017-18,1,20,20
 wba,2018-19,2,4,24
 wba,2019-20,2,2,22
+wba,2020-21,1,19,19
 west-ham,1888-89,,,
 west-ham,1889-90,,,
 west-ham,1890-91,,,
@@ -16103,6 +16357,7 @@ west-ham,2016-17,1,11,11
 west-ham,2017-18,1,13,13
 west-ham,2018-19,1,10,10
 west-ham,2019-20,1,16,16
+west-ham,2020-21,1,6,6
 wigan,1888-89,,,
 wigan,1889-90,,,
 wigan,1890-91,,,
@@ -16225,6 +16480,7 @@ wigan,2016-17,2,23,43
 wigan,2017-18,3,1,45
 wigan,2018-19,2,18,38
 wigan,2019-20,2,23,43
+wigan,2020-21,3,20,64
 wigan-borough,1888-89,,,
 wigan-borough,1889-90,,,
 wigan-borough,1890-91,,,
@@ -16347,6 +16603,7 @@ wigan-borough,2016-17,,,
 wigan-borough,2017-18,,,
 wigan-borough,2018-19,,,
 wigan-borough,2019-20,,,
+wigan-borough,2020-21,,,
 wimbledon,1888-89,,,
 wimbledon,1889-90,,,
 wimbledon,1890-91,,,
@@ -16469,6 +16726,7 @@ wimbledon,2016-17,,,
 wimbledon,2017-18,,,
 wimbledon,2018-19,3,20,64
 wimbledon,2019-20,,,
+wimbledon,2020-21,,,
 wolves,1888-89,1,3,3
 wolves,1889-90,1,4,4
 wolves,1890-91,1,4,4
@@ -16591,6 +16849,7 @@ wolves,2016-17,2,15,35
 wolves,2017-18,2,1,21
 wolves,2018-19,1,7,7
 wolves,2019-20,1,7,7
+wolves,2020-21,1,13,13
 workington,1888-89,,,
 workington,1889-90,,,
 workington,1890-91,,,
@@ -16713,6 +16972,7 @@ workington,2016-17,,,
 workington,2017-18,,,
 workington,2018-19,,,
 workington,2019-20,,,
+workington,2020-21,,,
 wrexham,1888-89,,,
 wrexham,1889-90,,,
 wrexham,1890-91,,,
@@ -16835,6 +17095,7 @@ wrexham,2016-17,,,
 wrexham,2017-18,,,
 wrexham,2018-19,,,
 wrexham,2019-20,,,
+wrexham,2020-21,,,
 wycombe,1888-89,,,
 wycombe,1889-90,,,
 wycombe,1890-91,,,
@@ -16957,6 +17218,7 @@ wycombe,2016-17,4,9,77
 wycombe,2017-18,4,3,71
 wycombe,2018-19,3,17,61
 wycombe,2019-20,3,3,47
+wycombe,2020-21,2,22,42
 yeovil,1888-89,,,
 yeovil,1889-90,,,
 yeovil,1890-91,,,
@@ -17079,6 +17341,7 @@ yeovil,2016-17,4,20,88
 yeovil,2017-18,4,19,87
 yeovil,2018-19,4,24,92
 yeovil,2019-20,,,
+yeovil,2020-21,,,
 york,1888-89,,,
 york,1889-90,,,
 york,1890-91,,,
@@ -17201,3 +17464,4 @@ york,2016-17,,,
 york,2017-18,,,
 york,2018-19,,,
 york,2019-20,,,
+york,2020-21,,,
