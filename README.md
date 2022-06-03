@@ -7,7 +7,7 @@ creating the data. A small amount of this needs to be hand-edited
 the last few seasons) but the majority comes from the wonderful
 [RSSSF][rsssf]. To build, here's the process I used:
 
-1. in `build`, run `rbenv install` and `bundle install`;
+1. in `build`, run `asdf install` and `bundle install`;
 2. in `build/`, run `bundle exec rake rsssf-seasons.json` to pull the
    RSSSF data;
 3. add extra files in TSV format to `build/manual/` (see Rakefile for
