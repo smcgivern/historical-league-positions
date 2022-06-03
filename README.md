@@ -13,8 +13,8 @@ the last few seasons) but the majority comes from the wonderful
 3. add extra files in TSV format to `build/manual/` (see Rakefile for
    details);
 4. run `bundle exec rake add_tsvs[$dir]`;
-5. `bundle exec rake list_teams > teams.txt` and edit that file to be
-   key=value;
+5. `bundle exec rake list_teams > teams.txt` and add keys to any teams
+   missing (nothing on the left-hand side of the `=`);
 6. `bundle exec rake list_tiers > tiers.txt`, same again;
 7. `bundle exec rake football-league-positions.json
    historical-league-positions.csv` for the final files to go into `ext/`.

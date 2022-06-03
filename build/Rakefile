@@ -67,9 +67,17 @@ end
 
 desc 'List the unique team names from the seasons file.'
 task :list_teams do
+  existing_teams = load_json(FILES[:teams]).reduce({}) do |teams, (id, names)|
+    names.each {|n| teams[n] = id}
+    teams
+  end
+
   puts load_json(FILES[:seasons]).
     map {|s, e| e.map {|d| d['table'].map {|t| t[2]}}}.
-    flatten.uniq.sort
+    flatten.
+    uniq.
+    map {|t| "#{existing_teams[t]}=#{t}"}.
+    sort
 end
 
 desc 'List the divisions from the seasons file with the header size.'
@@ -91,7 +99,7 @@ end
 # a lot of the lines can be deleted and so ignored.
 #
 desc 'Create JSON tiers file from the tiers mapping list.'
-file FILES[:tiers] do
+file FILES[:tiers] => [FILES[:tiers_mapping]] do
   create_from_mapping(:tiers)
 end
 
@@ -140,7 +148,7 @@ end
 # the seasons file.
 #
 desc 'Create JSON teams file from the teams mapping list.'
-file FILES[:teams] do
+file FILES[:teams] => [FILES[:teams_mapping]] do
   create_from_mapping(:teams)
 end
 
