@@ -1,3 +1,4 @@
+.direnv
 build/*.csv
 build/*.json
 build/*.txt
